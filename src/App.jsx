@@ -5,11 +5,16 @@ import "./App.css";
 import Inicio from "./Inicio/InicioRapido";
 import { useState } from "react";
 import Login from "./login";
+import Descubrir from "./principiante/Descubrir";
+import Union from "./principiante/ImportExport";
 
 function App() {
-  const [isLogged, setIsLogged] = useState(false);
-  function handleClick() {
-    setIsLogged(!isLogged);
+  const [isLogged, setIsLogged] = useState(0);
+  function Next() {
+    setIsLogged(isLogged + 1);
+  }
+  function Back() {
+    isLogged <= 0 ? setIsLogged(0) : setIsLogged(isLogged - 1);
   }
   return (
     <>
@@ -22,8 +27,14 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <Login isLogged={isLogged} onClick={handleClick} />
-      <div className="container">{isLogged && <Inicio />}</div>
+
+      {`Pagina: ${isLogged === 0 ? "Inicio" : isLogged}`}
+      <Login isLogged={isLogged} onNext={Next} onBack={Back} />
+      <div className="container">
+        {!isLogged && <Inicio />}
+        {isLogged == 1 && <Descubrir />}
+        {isLogged == 2 && <Union />}
+      </div>
     </>
   );
 }
