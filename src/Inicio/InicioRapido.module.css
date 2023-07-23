@@ -1,0 +1,44 @@
+pre{
+    padding: 10px;
+}
+.green{
+    color: rgb(52, 209, 105);
+}
+.greendark{
+    color: rgb(27, 156, 70);;
+}
+.pink{
+    color: rgb(247, 98, 202);
+}
+.yellow{
+    color: rgb(255, 217, 0);
+}
+.orange{
+    color: orange;
+}
+.celeste{
+    color: rgb(50, 200, 255);
+}
+.blue{
+    color: rgb(0,100, 255);
+}
+.white{
+    color: #fff;
+}
+.note{
+    background-color: #333;
+    border-style: inset;
+    border-radius: 5px;
+    padding: 2px;
+}
+hr{
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.87);
+    border-width:3px;
+    border-radius: 10px;
+}
+.ide{
+    background-color: rgb(60, 60, 60);
+    max-height: 100vmax;
+    max-width: 100vmin;
+}
