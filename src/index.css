@@ -36,6 +36,20 @@ h1 {
   line-height: .5;
 }
 
+ul{
+  display: flex;
+  flex-direction: row;
+  line-height: 1.5;
+  list-style: none;
+  flex-wrap: wrap;
+  max-width: 100dvw;
+}
+
+li{
+  padding: 5px;
+  flex: content;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
