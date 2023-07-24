@@ -3,7 +3,7 @@ import "./index.css";
 
 export default function Login({ isLogged, onNext, onBack }) {
   return (
-    <div id="irArriba">
+    <div>
       <button onClick={onBack} className={"button"}>
         Regresar pagina
       </button>
@@ -72,6 +72,34 @@ export default function Login({ isLogged, onNext, onBack }) {
       <ul className={isLogged === 3 ? "show" : "hide"}>
         <li>
           <a href="#convertirReglasjsx">Las Reglas de JSX</a>
+        </li>
+      </ul>
+      <ul className={isLogged === 4 ? "show" : "hide"}>
+        <li>
+          <a href="#strings">Pasando strings con comillas</a>
+        </li>
+        <li>
+          <a href="#usedKey">Usando llaves: Una ventana al mundo de JavaScript</a>
+        </li>
+        <li>
+          <a href="#llavesdoubles">Usando «llaves dobles»: CSS y otros objetos en JSX</a>
+        </li>
+        <li>
+          <a href="#masObjetos">Más diversión con objetos de JavaScript y llaves</a>
+        </li>
+      </ul>
+      <ul className={isLogged === 5 ? "show" : "hide"}>
+        <li>
+          <a href="#props">Props conocidas</a>
+        </li>
+        <li>
+          <a href="#usedKey">Usando llaves: Una ventana al mundo de JavaScript</a>
+        </li>
+        <li>
+          <a href="#llavesdoubles">Usando «llaves dobles»: CSS y otros objetos en JSX</a>
+        </li>
+        <li>
+          <a href="#masObjetos">Más diversión con objetos de JavaScript y llaves</a>
         </li>
       </ul>
     </div>
