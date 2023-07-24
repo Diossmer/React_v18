@@ -110,7 +110,7 @@ const Union = () => {
           <span className={"pink"}>import </span>
           <span className={"celeste"}> Library </span>
           <span className={"pink"}> from </span>
-          <span className={"orange"}>&#39;Library.js&#39;</span>;{"\n\n"}
+          <span className={"orange"}>&#39;./Library.js&#39;</span>;{"\n\n"}
         </code>
         <code>
           <span className={"pink"}>export </span>
@@ -160,7 +160,7 @@ const Union = () => {
             <span className={"pink"}>import </span>
             <span className={"celeste"}> Library </span>
             <span className={"pink"}> from </span>
-            <span className={"orange"}>&#39;Library&#39;</span>;{"\n\n"}
+            <span className={"orange"}>&#39;./Library&#39;</span>;{"\n\n"}
           </code>
         </pre>
         <span>
@@ -194,7 +194,7 @@ const Union = () => {
           <span className={"pink"}>import </span>
           <span className={"celeste"}> Library </span>
           <span className={"pink"}> from </span>
-          <span className={"orange"}>&#39;Library&#39;</span>;{"\n\n"}
+          <span className={"orange"}>&#39;./Library&#39;</span>;{"\n\n"}
         </code>
         <span className={"greendark"}>&#47;&#47;</span>
         <span className={"greendark"}>Por defecto</span>
@@ -224,7 +224,7 @@ const Union = () => {
           <span className={"celeste"}> Library </span>
           <span className={"blue"}>&#125;</span>
           <span className={"pink"}> from </span>
-          <span className={"orange"}>&#39;Library&#39;</span>;{"\n\n"}
+          <span className={"orange"}>&#39;./Library&#39;</span>;{"\n\n"}
         </code>
         <span className={"greendark"}>&#47;&#47;</span>
         <span className={"greendark"}>Con nombre</span>
@@ -281,6 +281,142 @@ const Union = () => {
           un mismo archivo. Es una cuestión de preferencias. ¡Haz lo que funcione mejor para ti!
         </span>
       </div>
+      <p>
+        Primero, <b>exporta</b> <snap className="shadow">Book</snap> desde{" "}
+        <snap className="shadow">Library.js</snap> usando un export con nombre &#40;sin la palabra
+        clave <snap className="shadow">default</snap>&#41;:
+      </p>
+      <pre className="ide">
+        <code>
+          <span className={"pink"}>export </span>
+          <span className={"blue"}>function </span>
+          <span className={"yellow"}>Book</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}> &#123;</span>
+          {"\n  "}
+          <span className={"greendark"}>&#47;&#47;</span>
+          <span className={"greendark"}>...</span>
+          {"\n"}
+          <span className={"yellow"}>&#125;</span>
+        </code>
+      </pre>
+      <p>
+        Luego, <b>importa</b> <snap className="shadow">Book</snap> de{" "}
+        <snap className="shadow">Library.js</snap> a <snap className="shadow">App.js</snap> usando
+        un import con nombre &#40;con llaves&#41;:
+      </p>
+      <pre className="ide">
+        <code>
+          <span className={"pink"}>import </span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}> Book </span>
+          <span className={"blue"}>&#125;</span>
+          <span className={"pink"}> from </span>
+          <span className={"orange"}>&#39;./Library.js&#39;</span>;{"\n\n"}
+        </code>
+      </pre>
+      <p>
+        Por último, <b>renderiza</b> <snap className="shadow">&lt;Profile /&gt;</snap> en el
+        componente <snap className="shadow">App</snap>:
+      </p>
+      <pre className="ide">
+        <code>
+          <span className={"pink"}>export </span>
+          <span className={"pink"}>default </span>
+          <span className={"blue"}>function </span>
+          <span className={"yellow"}>App</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}> &#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          &lt;<span className={"green"}>Book </span>/&gt;;
+          {"\n"}
+          <span className={"yellow"}>&#125;</span>
+        </code>
+      </pre>
+      <p>
+        Ahora <snap className="shadow">Library.js</snap> contiene dos exports: un export por defecto{" "}
+        <snap className="shadow">Library</snap>, y un export con nombre{" "}
+        <snap className="shadow">Book</snap>. <snap className="shadow">App.js</snap> importa ambos.
+        Intenta editar <snap className="shadow">&lt;Book /&gt;</snap> cambiándolo a{" "}
+        <snap className="shadow">&lt;Library /&gt;</snap> y viceversa en este ejemplo:
+      </p>
+      <pre className="ide">
+        <code>
+          <span className={"pink"}>import </span>
+          <span className={"celeste"}> Library </span>
+          <span className={"pink"}> from </span>
+          <span className={"orange"}>&#39;./Library.js&#39;</span>;{"\n"}
+        </code>
+        <code>
+          <span className={"pink"}>import </span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}> Book </span>
+          <span className={"blue"}>&#125;</span>
+          <span className={"pink"}> from </span>
+          <span className={"orange"}>&#39;./Library.js&#39;</span>;{"\n\n"}
+        </code>
+        <code>
+          <span className={"pink"}>export </span>
+          <span className={"pink"}>default </span>
+          <span className={"blue"}>function </span>
+          <span className={"yellow"}>App</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}> &#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          <span className={"yellow"}>&#40;</span>
+          {"\n    "}
+          &lt;&gt;
+          {"\n      "}
+          &lt;<span className={"green"}>Book </span>/&gt;
+          {"\n      "}
+          &lt;<span className={"green"}>Library </span>/&gt;
+          {"\n    "}
+          &lt;/&gt;
+          {"\n  "}
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+        </code>
+      </pre>
+      <p>
+        <b>Ahora estás usando una mezcla de exports por defecto y con nombre</b>:
+      </p>
+      <ol>
+        <li>
+          Library.js
+          <ol type={"a"} start="1">
+            <li>
+              Exporta el componente <snap className="shadow">Book</snap> como un{" "}
+              <b>export con nombre llamado</b> <snap className="shadow">Book</snap>.
+            </li>
+            <li>
+              Exporta el componente <snap className="shadow">Library</snap> como un{" "}
+              <b>export por defecto</b>.
+            </li>
+          </ol>
+        </li>
+        <li>
+          App.js
+          <ol type={"a"} start="1">
+            <li>
+              Importa <snap className="shadow">Book</snap> como un <b>import con nombre llamado</b>{" "}
+              <snap className="shadow">Book</snap> desde <snap className="shadow">Library.js</snap>.
+            </li>
+            <li>
+              Importa <snap className="shadow">Library</snap> como un <b>import por defecto</b>{" "}
+              desde <snap className="shadow">Library.js</snap>.
+            </li>
+            <li>
+              Exporta el componente raíz <snap className="shadow">App</snap> como un{" "}
+              <b>export por defecto</b>.
+            </li>
+          </ol>
+        </li>
+      </ol>
     </>
   );
 };
