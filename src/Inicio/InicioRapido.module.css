@@ -38,7 +38,9 @@ hr{
     border-radius: 10px;
 }
 .ide{
-    background-color: rgb(30, 30, 30);
+    background-color: #000;
     max-height: 100vmax;
     max-width: 100vmin;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px #fff;
 }

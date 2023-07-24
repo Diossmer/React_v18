@@ -61,10 +61,12 @@ export default function Login({ isLogged, onNext, onBack }) {
       </ul>
       <ul className={isLogged === 2 ? "show" : "hide"}>
         <li>
-          <a href="#descubrir">Descubrir</a>
+          <a href="#archivo-componente">Exportar e importar un componente</a>
         </li>
         <li>
-          <a href="#firstComponent">Tu primer componente</a>
+          <a href="#exportimportmultiple">
+            Exportar e importar múltiples componentes del mismo archivo
+          </a>
         </li>
         <li>
           <a href="#costruir-componente">Costruir componente</a>

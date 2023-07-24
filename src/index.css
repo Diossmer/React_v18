@@ -31,6 +31,30 @@ body {
   min-height: 100vh;
 }
 
+body::-webkit-scrollbar{
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track{
+  background-color: rgba(255, 255, 255, 0.27);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: rgba(200, 200, 200, 0.87);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(55, 155, 155, 0.87);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:active{
+  background-color: rgba(115, 155, 155, 0.87);
+  border-radius: 10px;
+}
+
 h1 {
   font-size: 2em;
   line-height: .5;

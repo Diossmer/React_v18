@@ -470,7 +470,7 @@ export default function Inicio() {
       </p>
       <hr />
       <h3>Compartir datos entre componentes</h3>
-      <pre>
+      <pre className="ide">
         <span className={Estilos.pink}>import </span>
         <span className={Estilos.yellow}>&#123;</span>
         <span className={Estilos.celeste}> useState </span>
