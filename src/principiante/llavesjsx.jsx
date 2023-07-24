@@ -364,12 +364,9 @@ export default function Llaves() {
         </code>
       </pre>
       <p>
-        <b>
-          La próxima vez que veas <span className={"shadow"}>&#123;&#123;</span> y{" "}
-          <span className={"shadow"}>&#125;&#125;</span> en JSX, ¡sabe que no es más que un objeto
-          dentro de las llaves JSX
-        </b>
-        !
+        La próxima vez que veas <span className={"shadow"}>&#123;&#123;</span> y{" "}
+        <span className={"shadow"}>&#125;&#125;</span> en JSX, ¡sabe que no es más que un objeto
+        dentro de las llaves JSX !
       </p>
       <div className="alert">
         <span>❗Atención</span>

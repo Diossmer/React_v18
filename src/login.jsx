@@ -93,10 +93,10 @@ export default function Login({ isLogged, onNext, onBack }) {
           <a href="#props">Props conocidas</a>
         </li>
         <li>
-          <a href="#usedKey">Usando llaves: Una ventana al mundo de JavaScript</a>
+          <a href="#asingValue">Asignar un valor predeterminado para una prop</a>
         </li>
         <li>
-          <a href="#llavesdoubles">Usando «llaves dobles»: CSS y otros objetos en JSX</a>
+          <a href="#pasarchildrem">Pasar JSX como hijos</a>
         </li>
         <li>
           <a href="#masObjetos">Más diversión con objetos de JavaScript y llaves</a>
