@@ -3,7 +3,7 @@ import "./index.css";
 
 export default function Login({ isLogged, onNext, onBack }) {
   return (
-    <div>
+    <div id="irArriba">
       <button onClick={onBack} className={"button"}>
         Regresar pagina
       </button>

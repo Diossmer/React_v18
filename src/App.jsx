@@ -8,6 +8,7 @@ import Login from "./login";
 import Descubrir from "./principiante/Descubrir";
 import Union from "./principiante/ImportExport";
 import Marcado from "./principiante/marcadojsx";
+import Llaves from "./principiante/llavesjsx";
 
 function App() {
   const [isLogged, setIsLogged] = useState(0);
@@ -36,6 +37,10 @@ function App() {
         {isLogged == 1 && <Descubrir />}
         {isLogged == 2 && <Union />}
         {isLogged == 3 && <Marcado />}
+        {isLogged == 4 && <Llaves />}
+      </div>
+      <div>
+        <a href="#irArriba">irArriba</a>
       </div>
     </>
   );
