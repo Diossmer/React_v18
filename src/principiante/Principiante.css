@@ -1,38 +1,48 @@
 pre{
     padding: 10px;
 }
+
 .green{
     color: rgb(52, 209, 105);
 }
+
 .greendark{
     color: rgb(27, 156, 70);;
 }
+
 .pink{
     color: rgb(247, 98, 202);
 }
+
 .yellow{
     color: rgb(255, 217, 0);
 }
+
 .orange{
     color: orange;
 }
+
 .celeste{
     color: rgb(50, 200, 255);
 }
+
 .blue{
     color: rgb(0,100, 255);
 }
+
 .white{
     color: #fff;
 }
+
 .note{
     color: rgba(20, 158, 202, 1);
 }
+
 .shadow{
     font-weight: bolder;
     color: #0ff00f;
-    text-shadow: 0px 2px 4px #08f , -0px -2px 4px #08f;
 }
+
 hr{
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.87);
@@ -82,6 +92,7 @@ hr{
         padding: 0;
     }
 }
+
 img{
     width: 90%;
     height: 100%;

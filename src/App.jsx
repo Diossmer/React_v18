@@ -7,6 +7,7 @@ import { useState } from "react";
 import Login from "./login";
 import Descubrir from "./principiante/Descubrir";
 import Union from "./principiante/ImportExport";
+import Marcado from "./principiante/marcadojsx";
 
 function App() {
   const [isLogged, setIsLogged] = useState(0);
@@ -34,6 +35,7 @@ function App() {
         {!isLogged && <Inicio />}
         {isLogged == 1 && <Descubrir />}
         {isLogged == 2 && <Union />}
+        {isLogged == 3 && <Marcado />}
       </div>
     </>
   );

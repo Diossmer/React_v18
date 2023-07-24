@@ -68,14 +68,10 @@ export default function Login({ isLogged, onNext, onBack }) {
             Exportar e importar múltiples componentes del mismo archivo
           </a>
         </li>
+      </ul>
+      <ul className={isLogged === 3 ? "show" : "hide"}>
         <li>
-          <a href="#costruir-componente">Costruir componente</a>
-        </li>
-        <li>
-          <a href="#usar-componente">Usar componente</a>
-        </li>
-        <li>
-          <a href="#anidar-componente">Anidar componente</a>
+          <a href="#convertirReglasjsx">Las Reglas de JSX</a>
         </li>
       </ul>
     </div>
