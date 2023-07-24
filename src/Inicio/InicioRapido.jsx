@@ -116,12 +116,15 @@ export default function Inicio() {
         dentro de las llaves de JSX de{" "}
         <code className={Estilos.note}>
           <span>style</span>=<span>&#123;&#123;&#125;&#125;</span>
-        </code>
+        </code>{" "}
         se indicá que está pasando un objeto JavaScript. Puedes utilizar el atributo{" "}
         <code className={Estilos.note}>
           <span>style</span>
-        </code>
+        </code>{" "}
         cuando tus Estilos dependen de variables de JavaScript.
+        <code className={Estilos.note}>
+          <span>style</span>=<span>&#123;&#123; key: &quot;valor&quot; &#125;&#125;</span>
+        </code>{" "}
       </p>
       <hr />
       <h3 id="mostrarDato">Mostrar Datos</h3>
