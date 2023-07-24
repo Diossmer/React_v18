@@ -39,9 +39,10 @@ function App() {
         {isLogged == 3 && <Marcado />}
         {isLogged == 4 && <Llaves />}
       </div>
-      <div>
-        <a href="#irArriba">irArriba</a>
-      </div>
+
+      <a href="#irArriba">
+        <button>irArriba</button>
+      </a>
     </>
   );
 }
