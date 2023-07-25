@@ -2,10 +2,7 @@ import "./Principiante.css";
 
 const Condicional = () => {
   let popo = `
-if (isPacked) {
-  return null;
-}
-return <li className="item">{name}</li>;
+
   `;
   return (
     <>
@@ -253,8 +250,129 @@ return <li className="item">{name}</li>;
       <span className="shadow">null</span>:
       </p>
       <pre className="ide">
-      {popo}
+      <code>
+		    	<span className="pink">if</span>
+		    	<span className="yellow">&#40;</span>
+		    	<span className="celeste">isPacked</span>
+		    	<span className="yellow">&#41;</span>{" "}
+		    	<span className="yellow">&#123;</span>
+		    	{"\n  "}
+		    	<span className="pink">return</span>{" "}
+					<span className="blue">null</span>;
+					{"\n"}
+					<span className="yellow">&#125;</span>
+					{"\n"}
+        </code>
+        <code>
+		    	<span className="pink">return</span>{" "}
+		    	&lt;<span className="blue">li</span>{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">name</span>
+			  	<span className="blue">&#125;</span>
+					&lt;/<span className="blue">li</span>&gt;;
+        </code>
       </pre>
+      <p>
+      Si <span className="shadow">isPacked</span> es verdadero, el componente no devolverá nada,{" "}
+      <span className="shadow">null</span>. En caso contrario, devolverá JSX para ser renderizado.
+      </p>
+      <pre className="ide">
+      <code>
+		    <span className="blue">function</span>{" "}
+		    <span className="yellow">Item</span>
+		    <span className="yellow">&#40;</span>
+		    <span className="blue">&#123;</span>
+		    <span className="celeste">name</span>,{" "}
+		    <span className="celeste">isPacked</span>
+		    <span className="blue">&#125;</span>
+		    <span className="yellow">&#40;</span>
+		    <span className="yellow">&#123;</span>{"\n  "}
+      </code>
+      <code>
+		    	<span className="pink">if</span>
+		    	<span className="yellow">&#40;</span>
+		    	<span className="celeste">isPacked</span>
+		    	<span className="yellow">&#41;</span>{" "}
+		    	<span className="pink">&#123;</span>
+		    	{"\n    "}
+		    	<span className="pink">return</span>{" "}
+					<span className="blue">null</span>;
+					{"\n  "}
+					<span className="pink">&#125;</span>{"\n  "}
+        </code>
+        <code>
+		    	<span className="pink">return</span>{" "}
+		    	&lt;<span className="blue">li</span>{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">name</span>
+			  	<span className="blue">&#125;</span>
+					&lt;/<span className="blue">li</span>&gt;;{"\n"}
+					<span className="yellow">&#125;</span>{"\n"}
+        </code>
+      <code>
+          <span className="pink">export</span> <span className="pink">default</span>{" "}
+          <span className="blue">function</span>{" "}
+          <span className="yellow">PackingList</span>
+          <span className="yellow">&#40;</span>
+          <span className="yellow">&#41;</span>{" "}
+          <span className="yellow">&#123;</span>
+          {"\n  "}
+          <span className="pink">return</span>
+          <span className="yellow">&#40;</span>
+          {"\n    "}
+          &lt;<span className="blue">section</span>&gt;
+          {"\n    "}&lt;<span className="blue">h1</span>&gt;
+          <span className="white">Sally Ride&#39;s Packing List</span>&lt;/
+          <span className="blue">h1</span>&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Space suit&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Helmet with a golden leaf&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">false</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Photo of Tam&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n    "}&lt;/<span className="blue">section</span>&gt;
+          {"\n  "}
+          <span className="yellow">&#41;</span>;{"\n"}
+          <span className="yellow">&#125;</span>
+        </code>
+      </pre>
+      <p>
+      En la práctica, devolver <span className="shadow">null</span> en un componente no es común porque{" "}
+      podría sorprender a un desarrollador que intente renderizarlo. Lo más frecuente es incluir{" "}
+      o excluir condicionalmente el componente en el JSX del componente padre. Aquí se explica cómo hacerlo.
+      </p>
     </>
   );
 };
