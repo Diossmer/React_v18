@@ -692,6 +692,31 @@ const Condicional = () => {
       <span className="shadow">false</span> como un «agujero» en el árbol JSX, al igual que{" "}
       <span className="shadow">null</span> o <span className="shadow">undefined</span>, y no renderiza nada en su lugar.
       </p>
+      <div className="alert">
+      <span>❗Atención</span>
+      <span><b>No pongas números a la izquierda de &&.</b></span>
+      <span>Para comprobar la condición, JavaScript convierte el lado izquierdo en un booleano automáticamente.{" "}
+      Sin embargo, si el lado izquierdo es <span className="shadow">0</span>, entonces toda la expresión{" "}
+      obtiene ese valor (<span className="shadow">0</span>), y React representará felizmente{" "}
+      <span className="shadow">0</span> en lugar de nada.</span>
+      <span>Por ejemplo, un error común es escribir código como <span className="shadow">messageCount && &lt;p&gt;New messages&lt;/p&gt;</span>. Es fácil suponer que no renderiza nada cuando <span className="shadow">messageCount</span> es <span className="shadow">0</span>, pero en realidad renderiza el propio <span className="shadow">0</span>.</span>
+      <span>Para arreglarlo, haz que el lado izquierdo sea un booleano: <span className="shadow">messageCount &gt; 0 && &lt;p&gt;New messages&lt;/p&gt;</span>.</span>
+      </div>
+      <h3>Asignación condicional de JSX a una variable</h3>
+      <p>
+      Cuando los atajos se interpongan en el camino de la escritura de código simple, prueba a{""}
+      utilizar una sentencia <span className="shadow">if</span> y una variable. Puedes reasignar las{" "}
+      variables definidas con <span className="note">let</span>, así que empieza proporcionando el contenido{" "}
+      por defecto que quieres mostrar, el nombre:
+      </p>
+      <pre className="ide">
+      <code>
+				<span className="blue">let</span>{" "}
+				<span className="celeste">itemContent</span>{" "}
+				<span className="white">=</span>{" "}
+				<span className="celeste">name</span>;
+			</code>
+      </pre>
     </>
   );
 };
