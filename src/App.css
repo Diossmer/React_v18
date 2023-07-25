@@ -22,7 +22,7 @@
 }
 
 .mdn{
-  filter: contrast(5%) sepia(5) hue-rotate(185deg) saturate(1000%);
+  filter: contrast(5%) sepia(5) hue-rotate(15deg) saturate(1000%);
 	transform: scale(1.2);
 	&:hover{
   filter: contrast(5%) sepia(5) hue-rotate(310deg) saturate(1000%);
