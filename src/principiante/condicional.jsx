@@ -1,9 +1,6 @@
 import "./Principiante.css";
 
 const Condicional = () => {
-  let popo = `
-a
-  `;
   return (
     <>
       <h1>Renderizado condicional</h1>
@@ -429,7 +426,7 @@ a
 			  	<span className="celeste">isPacked</span>{" "}
 			  	<span className="white">&#63;</span>{" "}
 			  	<span className="celeste">name</span>{" "}
-			  	<span className="yellow">+</span>{" "}
+			  	<span className="white">+</span>{" "}
 			  	<span className="orange">&#39; <span className="green">✔</span>&#39;</span>{" "}
 			  	<span className="white">&#58;</span>{" "}
 			  	<span className="celeste">name</span>
@@ -551,6 +548,150 @@ a
           <span className="yellow">&#125;</span>
         </code>
       </pre>
+      <p>
+      Este estilo funciona bien para condiciones simples, pero utilízalo con moderación.{" "}
+      Si tus componentes se desordenan con demasiado marcado condicional anidado, considera la posibilidad{" "}
+      de extraer componentes hijos para limpiar las cosas. En React, el marcado es una parte de tu código,{" "}
+      por lo que puedes utilizar herramientas como variables y funciones para ordenar las expresiones complejas.
+      </p>
+      <h3>Operador lógico AND (&&)</h3>
+      <p>
+      Otro atajo común que encontrarás es el <span className="note">operador lógico AND (&&) de JavaScript</span>.{" "}
+      Dentro de los componentes de React, a menudo surge cuando quieres renderizar algún JSX cuando{" "}
+      la condición es verdadera, <b>o no renderizar nada en caso contrario</b>. Con{" "}
+      <span className="shadow">&&</span>, podrías renderizar condicionalmente la marca de verificación{" "}
+      sólo si <span className="shadow">isPacked</span> es <span className="shadow">true</span>:
+      </p>
+      <pre className="ide">
+      <code>
+		    	<span className="pink">return</span>{" "}
+		    	<span className="yellow">&#40;</span>{"\n  "}
+		    	&lt;<span className="blue">li</span>{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	{"\n    "}
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">name</span>
+			  	<span className="blue">&#125;</span>{" "}
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">isPacked</span>{" "}
+			  	<span className="white">&&</span>{" "}
+			  	<span className="orange">&#39;<span className="green">✔</span>&#39;</span>
+			  	<span className="blue">&#125;</span>
+			  	{"\n  "}
+					&lt;/<span className="blue">li</span>&gt;
+					{"\n"}
+					<span className="yellow">&#41;</span>;
+        </code>
+      </pre>
+      <p>
+      Puedes leer esto como «si <span className="shadow">isPacked</span>, entonces{" "}
+      (<span className="shadow">&&</span>) renderiza la marca de verificación, si no, no renderiza nada.»
+      </p>
+      <p>
+      Aquí está en acción:
+      </p>
+      <pre className="ide">
+      <code>
+				  <span className="blue">function</span>{" "}
+				  <span className="yellow">Item</span>
+				  <span className="yellow">&#40;</span>
+				  <span className="blue">&#123;</span>
+				  <span className="celeste">name</span>,{" "}
+				  <span className="celeste">isPacked</span>
+				  <span className="blue">&#125;</span>
+				  <span className="yellow">&#40;</span>
+				  <span className="yellow">&#123;</span>{"\n  "}
+		    </code>
+		    <code>
+			  	<span className="pink">return</span>
+			  	{" "}
+			  	<span className="pink">&#40;</span>
+			  	{"\n    "}
+			  	&lt;<span className="blue">li</span>
+			  	{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	{"\n      "}
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">name</span>
+			  	<span className="blue">&#125;</span>{" "}
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">isPacked</span>{" "}
+			  	<span className="white">&&</span>{" "}
+			  	<span className="orange">&#39;<span className="green">✔</span>&#39;</span>
+			  	<span className="blue">&#125;</span>
+					{"\n    "}
+					&lt;/<span className="blue">li</span>&gt;{" "}
+					{"\n  "}
+					<span className="pink">&#41;</span>;
+					{"\n"}
+					<span className="yellow">&#125;</span>
+					{"\n\n"}
+		    </code>
+		    <code>
+          <span className="pink">export</span> <span className="pink">default</span>{" "}
+          <span className="blue">function</span>{" "}
+          <span className="yellow">PackingList</span>
+          <span className="yellow">&#40;</span>
+          <span className="yellow">&#41;</span>{" "}
+          <span className="yellow">&#123;</span>
+          {"\n  "}
+          <span className="pink">return</span>
+          <span className="yellow">&#40;</span>
+          {"\n    "}
+          &lt;<span className="blue">section</span>&gt;
+          {"\n    "}&lt;<span className="blue">h1</span>&gt;
+          <span className="white">Sally Ride&#39;s Packing List</span>&lt;/
+          <span className="blue">h1</span>&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Space suit&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Helmet with a golden leaf&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">false</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Photo of Tam&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n    "}&lt;/<span className="blue">section</span>&gt;
+          {"\n  "}
+          <span className="yellow">&#41;</span>;{"\n"}
+          <span className="yellow">&#125;</span>
+        </code>
+      </pre>
+      <p>
+      Una <span className="note">expresión JavaScript &&</span> devuelve el valor de su lado{" "}
+      derecho (en nuestro caso, la marca de verificación) si el lado izquierdo (nuestra condición){" "}
+      es <span className="shadow">true</span>. Pero si la condición es <span className="shadow">false</span>,{" "}
+      toda la expresión se convierte en <span className="shadow">false</span>. React considera{" "}
+      <span className="shadow">false</span> como un «agujero» en el árbol JSX, al igual que{" "}
+      <span className="shadow">null</span> o <span className="shadow">undefined</span>, y no renderiza nada en su lugar.
+      </p>
     </>
   );
 };
