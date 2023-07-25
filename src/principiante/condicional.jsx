@@ -119,7 +119,7 @@ export default function PackingList() {
       <p>
         Observa que algunos de los componentes Item tienen su prop isPacked asignada a{" "}
         <span className="shadow">true</span> en lugar de <span className="shadow">false</span>. Se
-        desea añadir una marca de verificación &#40;✔&#41; a los elementos empaquetados si{" "}
+        desea añadir una marca de verificación &#40;<span className="green">✔</span>&#41; a los elementos empaquetados si{" "}
         <span className="shadow">isPacked=&#123;true&#125;</span>.
       </p>
       <p>
