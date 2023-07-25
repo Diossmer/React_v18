@@ -2,11 +2,42 @@ import "./Principiante.css";
 
 const Condicional = () => {
   let popo = `
-return (
-  <li className="item">
-    {isPacked ? name + ' ✔' : name}
-  </li>
-);
+function Item({ name, isPacked }) {
+  return (
+    <li className="item">
+      {isPacked ? (
+        <del>
+          {name + ' ✔'}
+        </del>
+      ) : (
+        name
+      )}
+    </li>
+  );
+}
+
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
+  );
+}
+
   `;
   return (
     <>
@@ -380,7 +411,7 @@ return (
       <h3>Operador condicional (ternario) &#40;&#63; &#58;&#41;</h3>
       <p>
       JavaScript tiene una sintaxis compacta para escribir una expresión{" "}
-      condicional &#95; el <span className="note">operador condicional</span> u &#171;operador ternario&#187;.
+      condicional — el <span className="note">operador condicional</span> u &#171;operador ternario&#187;.
       </p>
       <p>
       En lugar de esto:
@@ -449,6 +480,14 @@ return (
       (<span className="shadow">?</span>) renderiza <span className="shadow">name + ' ✔'</span>,{" "}
       de lo contrario (<span className="shadow">:</span>) renderiza <span className="shadow">name</span>»)
       </p>
+      <p>
+      Ahora digamos que quieres envolver el texto del elemento completado en otra etiqueta HTML,{" "}
+      como <span className="shadow">&lt;del&gt;</span> para tacharlo. Puedes añadir aún más líneas{" "}
+      nuevas y paréntesis para que sea más fácil anidar más JSX en cada uno de los casos:
+      </p>
+      <pre className="ide">
+      	{popo}
+      </pre>
     </>
   );
 };
