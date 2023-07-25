@@ -2,7 +2,11 @@ import "./Principiante.css";
 
 const Condicional = () => {
   let popo = `
-
+return (
+  <li className="item">
+    {isPacked ? name + ' ✔' : name}
+  </li>
+);
   `;
   return (
     <>
@@ -169,8 +173,8 @@ const Condicional = () => {
 		    	<span className="green">✔</span>
 					&lt;/<span className="blue">li</span>&gt;;{"\n  "}
 					<span className="pink">&#125;</span>{"\n  "}
-        </code>
-        <code>
+      </code>
+      <code>
 		    	<span className="pink">return</span>{" "}
 		    	&lt;<span className="blue">li</span>{" "}
 			  	<span className="celeste">className</span>
@@ -181,7 +185,7 @@ const Condicional = () => {
 			  	<span className="blue">&#125;</span>
 					&lt;/<span className="blue">li</span>&gt;;{"\n"}
 					<span className="yellow">&#125;</span>{"\n"}
-        </code>
+      </code>
       <code>
           <span className="pink">export</span> <span className="pink">default</span>{" "}
           <span className="blue">function</span>{" "}
@@ -372,6 +376,78 @@ const Condicional = () => {
       En la práctica, devolver <span className="shadow">null</span> en un componente no es común porque{" "}
       podría sorprender a un desarrollador que intente renderizarlo. Lo más frecuente es incluir{" "}
       o excluir condicionalmente el componente en el JSX del componente padre. Aquí se explica cómo hacerlo.
+      </p>
+      <h3>Operador condicional (ternario) &#40;&#63; &#58;&#41;</h3>
+      <p>
+      JavaScript tiene una sintaxis compacta para escribir una expresión{" "}
+      condicional &#95; el <span className="note">operador condicional</span> u &#171;operador ternario&#187;.
+      </p>
+      <p>
+      En lugar de esto:
+      </p>
+      <pre className="ide">
+      <code>
+		    	<span className="pink">if</span>
+		    	<span className="yellow">&#40;</span>
+		    	<span className="celeste">isPacked</span>
+		    	<span className="yellow">&#41;</span>{" "}
+		    	<span className="yellow">&#123;</span>
+		    	{"\n  "}
+		    	<span className="pink">return</span>{" "}
+					&lt;<span className="blue">li</span>{" "}
+		    	<span className="celeste">className</span>
+		    	<span className="white">=</span>
+		    	<span className="orange">&quot;item&quot;</span>&gt;
+		    	<span className="blue">&#123;</span>
+		    	<span className="celeste">name</span>
+		    	<span className="blue">&#125;</span>{" "}
+		    	<span className="green">✔</span>
+					&lt;/<span className="blue">li</span>&gt;;{"\n"}
+					<span className="yellow">&#125;</span>{"\n"}
+        </code>
+        <code>
+		    	<span className="pink">return</span>{" "}
+		    	&lt;<span className="blue">li</span>{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">name</span>
+			  	<span className="blue">&#125;</span>
+					&lt;/<span className="blue">li</span>&gt;;
+        </code>
+      </pre>
+      <p>
+      Puedes escribir esto:
+      </p>
+      <pre className="ide">
+      <code>
+		    	<span className="pink">return</span>{" "}
+		    	<span className="yellow">&#40;</span>{"\n  "}
+		    	&lt;<span className="blue">li</span>{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	{"\n    "}
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">isPacked</span>{" "}
+			  	<span className="white">&#63;</span>{" "}
+			  	<span className="celeste">name</span>{" "}
+			  	<span className="yellow">+</span>{" "}
+			  	<span className="orange">&#39; <span className="green">✔</span>&#39;</span>{" "}
+			  	<span className="white">&#58;</span>{" "}
+			  	<span className="celeste">name</span>
+			  	<span className="blue">&#125;</span>
+			  	{"\n  "}
+					&lt;/<span className="blue">li</span>&gt;
+					{"\n"}
+					<span className="yellow">&#41;</span>;
+        </code>
+      </pre>
+      <p>
+      Puedes leerlo como «si <span className="shadow">isPacked</span> es verdadero, entonces{" "}
+      (<span className="shadow">?</span>) renderiza <span className="shadow">name + ' ✔'</span>,{" "}
+      de lo contrario (<span className="shadow">:</span>) renderiza <span className="shadow">name</span>»)
       </p>
     </>
   );
