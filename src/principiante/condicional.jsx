@@ -2,28 +2,7 @@ import "./Principiante.css";
 
 const Condicional = () => {
   let popo = `
-export default function PackingList() {
-  return (
-    <section>
-      <h1>Sally Ride's Packing List</h1>
-      <ul>
-        <Item 
-          isPacked={true} 
-          name="Space suit" 
-        />
-        <Item 
-          isPacked={true} 
-          name="Helmet with a golden leaf" 
-        />
-        <Item 
-          isPacked={false} 
-          name="Photo of Tam" 
-        />
-      </ul>
-    </section>
-  );
-}
-
+a
   `;
   return (
     <>
@@ -494,31 +473,83 @@ export default function PackingList() {
 			  	<span className="white">=</span>
 			  	<span className="orange">&quot;item&quot;</span>&gt;
 			  	{"\n      "}
-			  	<span className="blue">&#123;</span>{" "}
+			  	<span className="blue">&#123;</span>
 			  	<span className="celeste">isPacked</span>{" "}
 			  	<span className="pink">?</span>{" "}
-			  	<span className="yellow">&#40;</span>{" "}
-			  	&lt;<span className="blue">del</span>&gt;{" "}
-			  	<span className="blue">&#123;</span>{" "}
+			  	<span className="yellow">&#40;</span>
+			  	&lt;<span className="blue">del</span>&gt;
+			  	<span className="blue">&#123;</span>
 			  	<span className="celeste">name</span>{" "}
 			  	<span className="white">+</span>{" "}
-			  	<span className="orange">&#39; <span className="green">✔</span>&#39;</span>{" "}
-			  	<span className="blue">&#125;</span>{" "}
-			  	&lt;/<span className="blue">del</span>&gt;{" "}
+			  	<span className="orange">&#39; <span className="green">✔</span>&#39;</span>
+			  	<span className="blue">&#125;</span>
+			  	&lt;/<span className="blue">del</span>&gt;
 			  	<span className="yellow">&#41;</span>{" "}
 			  	<span className="pink">:</span>{" "}
-			  	<span className="yellow">&#40;</span>{" "}
-			  	<span className="celeste">name</span>{" "}
-			  	<span className="yellow">&#41;</span>{" "}
+			  	<span className="yellow">&#40;</span>
+			  	<span className="celeste">name</span>
+			  	<span className="yellow">&#41;</span>
 					<span className="blue">&#125;</span>
 					{"\n    "}
 					&lt;/<span className="blue">li</span>&gt;{" "}
 					{"\n  "}
 					<span className="pink">&#41;</span>;
 					{"\n"}
-					<span className="yellow">&#125;</span>{"\n  "}
+					<span className="yellow">&#125;</span>
+					{"\n\n"}
 		    </code>
-      	{popo}
+		    <code>
+          <span className="pink">export</span> <span className="pink">default</span>{" "}
+          <span className="blue">function</span>{" "}
+          <span className="yellow">PackingList</span>
+          <span className="yellow">&#40;</span>
+          <span className="yellow">&#41;</span>{" "}
+          <span className="yellow">&#123;</span>
+          {"\n  "}
+          <span className="pink">return</span>
+          <span className="yellow">&#40;</span>
+          {"\n    "}
+          &lt;<span className="blue">section</span>&gt;
+          {"\n    "}&lt;<span className="blue">h1</span>&gt;
+          <span className="white">Sally Ride&#39;s Packing List</span>&lt;/
+          <span className="blue">h1</span>&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Space suit&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Helmet with a golden leaf&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">false</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Photo of Tam&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n    "}&lt;/<span className="blue">section</span>&gt;
+          {"\n  "}
+          <span className="yellow">&#41;</span>;{"\n"}
+          <span className="yellow">&#125;</span>
+        </code>
       </pre>
     </>
   );
