@@ -213,8 +213,30 @@ const Union = () => {
           <span className={"yellow"}>&#41;</span>;{"\n"}
           <span className={"yellow"}>&#125;</span>
         </code>
-        <hr />
+        {"\n\n"}
+        <span className={"greendark"}>&#47;&#47;</span>
+        <span className={"greendark"}>Por defecto</span>
         {"\n"}
+        <code>
+        	<span className={"blue"}>const</span>{" "}
+          <span className={"celeste"}>Library</span>
+          <span className={"white"}>=</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"white"}>=&gt;</span>
+          <span className={"yellow"}>&#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>{"\n"}
+          <span className={"pink"}>export </span>
+          <span className={"pink"}>default </span>
+          <span className={"celeste"}>Library</span>;
+          {"\n"}
+        </code>
+        {"\n"}
+        <hr />
         <span className={"greendark"}>&#47;&#47;</span>
         <span className={"greendark"}>Con nombre</span>
         {"\n"}
@@ -241,6 +263,30 @@ const Union = () => {
           <span className={"yellow"}>&#40;</span>
           <span className={"yellow"}>&#41;</span>;{"\n"}
           <span className={"yellow"}>&#125;</span>
+        </code>
+        {"\n\n"}
+        <code>
+		      <span className={"greendark"}>&#47;&#47;</span>
+		      <span className={"greendark"}>Con nombre</span>
+        </code>
+        {"\n"}
+        <code>
+        	<span className={"blue"}>const</span>{" "}
+          <span className={"celeste"}>Library</span>
+          <span className={"white"}>=</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"white"}>=&gt;</span>
+          <span className={"yellow"}>&#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>{"\n"}
+          <span className={"pink"}>export</span>{" "}
+          <span className={"pink"}>&#123;</span>{" "}
+          <span className={"celeste"}>Library</span>{" "}
+          <span className={"pink"}>&#125;</span>;
         </code>
       </pre>
       <p>
