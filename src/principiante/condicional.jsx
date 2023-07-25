@@ -2,20 +2,6 @@ import "./Principiante.css";
 
 const Condicional = () => {
   let popo = `
-function Item({ name, isPacked }) {
-  return (
-    <li className="item">
-      {isPacked ? (
-        <del>
-          {name + ' ✔'}
-        </del>
-      ) : (
-        name
-      )}
-    </li>
-  );
-}
-
 export default function PackingList() {
   return (
     <section>
@@ -486,6 +472,52 @@ export default function PackingList() {
       nuevas y paréntesis para que sea más fácil anidar más JSX en cada uno de los casos:
       </p>
       <pre className="ide">
+		    <code>
+				  <span className="blue">function</span>{" "}
+				  <span className="yellow">Item</span>
+				  <span className="yellow">&#40;</span>
+				  <span className="blue">&#123;</span>
+				  <span className="celeste">name</span>,{" "}
+				  <span className="celeste">isPacked</span>
+				  <span className="blue">&#125;</span>
+				  <span className="yellow">&#40;</span>
+				  <span className="yellow">&#123;</span>{"\n  "}
+		    </code>
+		    <code>
+			  	<span className="pink">return</span>
+			  	{" "}
+			  	<span className="pink">&#40;</span>
+			  	{"\n    "}
+			  	&lt;<span className="blue">li</span>
+			  	{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	{"\n      "}
+			  	<span className="blue">&#123;</span>{" "}
+			  	<span className="celeste">isPacked</span>{" "}
+			  	<span className="pink">?</span>{" "}
+			  	<span className="yellow">&#40;</span>{" "}
+			  	&lt;<span className="blue">del</span>&gt;{" "}
+			  	<span className="blue">&#123;</span>{" "}
+			  	<span className="celeste">name</span>{" "}
+			  	<span className="white">+</span>{" "}
+			  	<span className="orange">&#39; <span className="green">✔</span>&#39;</span>{" "}
+			  	<span className="blue">&#125;</span>{" "}
+			  	&lt;/<span className="blue">del</span>&gt;{" "}
+			  	<span className="yellow">&#41;</span>{" "}
+			  	<span className="pink">:</span>{" "}
+			  	<span className="yellow">&#40;</span>{" "}
+			  	<span className="celeste">name</span>{" "}
+			  	<span className="yellow">&#41;</span>{" "}
+					<span className="blue">&#125;</span>
+					{"\n    "}
+					&lt;/<span className="blue">li</span>&gt;{" "}
+					{"\n  "}
+					<span className="pink">&#41;</span>;
+					{"\n"}
+					<span className="yellow">&#125;</span>{"\n  "}
+		    </code>
       	{popo}
       </pre>
     </>
