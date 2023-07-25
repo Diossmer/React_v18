@@ -2,10 +2,35 @@ import "./Principiante.css";
 
 const Condicional = () => {
   let popo = `
+  function Item({ name, isPacked }) {
   if (isPacked) {
     return <li className="item">{name} ✔</li>;
   }
   return <li className="item">{name}</li>;
+}
+
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
+  );
+}
+
   `;
   return (
     <>
@@ -106,6 +131,43 @@ const Condicional = () => {
       </p>
       <p>
         Puedes escribir esto como una declaración <span className="note">if/else</span> así:
+      </p>
+      <pre className="ide">
+        <code>
+		    	<span className="pink">if</span>
+		    	<span className="yellow">&#40;</span>
+		    	<span className="celeste">isPacked</span>
+		    	<span className="yellow">&#41;</span>{" "}
+		    	<span className="yellow">&#123;</span>
+		    	{"\n  "}
+		    	<span className="pink">return</span>{" "}
+					&lt;<span className="blue">li</span>{" "}
+		    	<span className="celeste">className</span>
+		    	<span className="white">=</span>
+		    	<span className="orange">&quot;item&quot;</span>&gt;
+		    	<span className="blue">&#123;</span>
+		    	<span className="celeste">name</span>
+		    	<span className="blue">&#125;</span>{" "}
+		    	<span className="green">✔</span>
+					&lt;/<span className="blue">li</span>&gt;;{"\n"}
+					<span className="shadow">&#125;</span>{"\n"}
+        </code>
+        <code>
+		    	<span className="pink">return</span>{" "}
+		    	&lt;<span className="blue">li</span>{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">name</span>
+			  	<span className="blue">&#125;</span>
+					&lt;/<span className="blue">li</span>&gt;;
+        </code>
+      </pre>
+      <p>
+      Si la prop <span className="shadow">isPacked</span> es <span className="shadow">true</span>,{" "}
+      este código <b>devuelve un árbol JSX diferente</b>. Con este cambio, algunos de los{" "}
+      elementos obtienen una marca de verificación al final:
       </p>
       <pre className="ide">{popo}</pre>
     </>
