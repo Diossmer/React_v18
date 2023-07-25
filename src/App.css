@@ -7,7 +7,7 @@
 
 .logo {
   width: 80px;
-  height: 3rem;
+  height: 4rem;
   padding: 0.5em;
   will-change: filter;
   transition: filter 300ms;
@@ -19,6 +19,14 @@
 
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.mdn{
+  filter: contrast(5%) sepia(5) hue-rotate(185deg) saturate(1000%);
+	transform: scale(1.2);
+	&:hover{
+  filter: contrast(5%) sepia(5) hue-rotate(310deg) saturate(1000%);
+	}
 }
 
 @keyframes logo-spin {

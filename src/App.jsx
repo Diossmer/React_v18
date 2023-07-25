@@ -1,6 +1,7 @@
 //import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import mdn from "/mdn_web.svg";
 import "./App.css";
 import Inicio from "./Inicio/InicioRapido";
 import { useState } from "react";
@@ -29,6 +30,9 @@ function App() {
         </a>
         <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining" target="_blank" rel="noreferrer">
+          <img src={mdn} className="logo mdn" alt="Mdn logo"/>
         </a>
       </div>
 
