@@ -2,13 +2,6 @@ import "./Principiante.css";
 
 const Condicional = () => {
   let popo = `
-  function Item({ name, isPacked }) {
-  if (isPacked) {
-    return <li className="item">{name} ✔</li>;
-  }
-  return <li className="item">{name}</li>;
-}
-
 export default function PackingList() {
   return (
     <section>
@@ -150,7 +143,7 @@ export default function PackingList() {
 		    	<span className="blue">&#125;</span>{" "}
 		    	<span className="green">✔</span>
 					&lt;/<span className="blue">li</span>&gt;;{"\n"}
-					<span className="shadow">&#125;</span>{"\n"}
+					<span className="yellow">&#125;</span>{"\n"}
         </code>
         <code>
 		    	<span className="pink">return</span>{" "}
@@ -169,7 +162,49 @@ export default function PackingList() {
       este código <b>devuelve un árbol JSX diferente</b>. Con este cambio, algunos de los{" "}
       elementos obtienen una marca de verificación al final:
       </p>
-      <pre className="ide">{popo}</pre>
+      <pre className="ide">
+      <span className="blue">function</span>{" "}
+      <span className="yellow">Item</span>
+      <span className="yellow">&#40;</span>
+      <span className="blue">&#123;</span>
+      <span className="celeste">name</span>,{" "}
+      <span className="celeste">isPacked</span>
+      <span className="blue">&#125;</span>
+      <span className="yellow">&#40;</span>
+      <span className="yellow">&#123;</span>{"\n  "}
+      <code>
+		    	<span className="pink">if</span>
+		    	<span className="yellow">&#40;</span>
+		    	<span className="celeste">isPacked</span>
+		    	<span className="yellow">&#41;</span>{" "}
+		    	<span className="pink">&#123;</span>
+		    	{"\n    "}
+		    	<span className="pink">return</span>{" "}
+					&lt;<span className="blue">li</span>{" "}
+		    	<span className="celeste">className</span>
+		    	<span className="white">=</span>
+		    	<span className="orange">&quot;item&quot;</span>&gt;
+		    	<span className="blue">&#123;</span>
+		    	<span className="celeste">name</span>
+		    	<span className="blue">&#125;</span>{" "}
+		    	<span className="green">✔</span>
+					&lt;/<span className="blue">li</span>&gt;;{"\n  "}
+					<span className="pink">&#125;</span>{"\n  "}
+        </code>
+        <code>
+		    	<span className="pink">return</span>{" "}
+		    	&lt;<span className="blue">li</span>{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">name</span>
+			  	<span className="blue">&#125;</span>
+					&lt;/<span className="blue">li</span>&gt;;{"\n"}
+					<span className="yellow">&#125;</span>
+        </code>
+      {popo}
+      </pre>
     </>
   );
 };
