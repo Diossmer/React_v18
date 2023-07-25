@@ -10,6 +10,7 @@ import Union from "./principiante/ImportExport";
 import Marcado from "./principiante/marcadojsx";
 import Llaves from "./principiante/llavesjsx";
 import Props from "./principiante/props";
+import Condicional from "./principiante/condicional";
 
 function App() {
   const [isLogged, setIsLogged] = useState(0);
@@ -40,6 +41,7 @@ function App() {
         {isLogged == 3 && <Marcado />}
         {isLogged == 4 && <Llaves />}
         {isLogged == 5 && <Props />}
+        {isLogged == 6 && <Condicional />}
       </div>
 
       <a href="#irArriba">

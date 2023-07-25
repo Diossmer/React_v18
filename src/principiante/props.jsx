@@ -773,6 +773,9 @@ export default function Props() {
           <span className={"blue"}>function </span>
           <span className={"yellow"}>Profile</span>
           <span className={"yellow"}>&#40;</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">color</span>,<span className="celeste">time</span>
+          <span className="blue">&#125;</span>
           <span className={"yellow"}>&#41;</span>
           <span className={"yellow"}> &#123;</span>
           {"\n  "}

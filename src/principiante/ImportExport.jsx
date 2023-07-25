@@ -263,11 +263,11 @@ const Union = () => {
       </p>
       <h3 id="exportimportmultiple">Exportar e importar múltiples componentes del mismo archivo</h3>
       <p>
-        ¿Y si quisieras mostrar solo un <snap className="shadow">Book</snap> en lugar de toda la
-        galería? Puedes exportar el componente <snap className="shadow">Book</snap> también. Pero{" "}
-        <snap className="shadow">Library.js</snap> ya tiene un export por defecto, y no puedes tener
+        ¿Y si quisieras mostrar solo un <span className="shadow">Book</span> en lugar de toda la
+        galería? Puedes exportar el componente <span className="shadow">Book</span> también. Pero{" "}
+        <span className="shadow">Library.js</span> ya tiene un export por defecto, y no puedes tener
         dos exports por defecto. Podrías crear un nuevo archivo con un export por defecto, o podrías
-        añadir un export con nombre para <snap className="shadow">Book</snap>.{" "}
+        añadir un export con nombre para <span className="shadow">Book</span>.{" "}
         <b>
           ¡Un archivo solo puede contener un export por defecto, pero puede tener múltiples exports
           con nombre!
@@ -282,9 +282,9 @@ const Union = () => {
         </span>
       </div>
       <p>
-        Primero, <b>exporta</b> <snap className="shadow">Book</snap> desde{" "}
-        <snap className="shadow">Library.js</snap> usando un export con nombre &#40;sin la palabra
-        clave <snap className="shadow">default</snap>&#41;:
+        Primero, <b>exporta</b> <span className="shadow">Book</span> desde{" "}
+        <span className="shadow">Library.js</span> usando un export con nombre &#40;sin la palabra
+        clave <span className="shadow">default</span>&#41;:
       </p>
       <pre className="ide">
         <code>
@@ -302,8 +302,8 @@ const Union = () => {
         </code>
       </pre>
       <p>
-        Luego, <b>importa</b> <snap className="shadow">Book</snap> de{" "}
-        <snap className="shadow">Library.js</snap> a <snap className="shadow">App.js</snap> usando
+        Luego, <b>importa</b> <span className="shadow">Book</span> de{" "}
+        <span className="shadow">Library.js</span> a <span className="shadow">App.js</span> usando
         un import con nombre &#40;con llaves&#41;:
       </p>
       <pre className="ide">
@@ -317,8 +317,8 @@ const Union = () => {
         </code>
       </pre>
       <p>
-        Por último, <b>renderiza</b> <snap className="shadow">&lt;Profile /&gt;</snap> en el
-        componente <snap className="shadow">App</snap>:
+        Por último, <b>renderiza</b> <span className="shadow">&lt;Profile /&gt;</span> en el
+        componente <span className="shadow">App</span>:
       </p>
       <pre className="ide">
         <code>
@@ -337,11 +337,11 @@ const Union = () => {
         </code>
       </pre>
       <p>
-        Ahora <snap className="shadow">Library.js</snap> contiene dos exports: un export por defecto{" "}
-        <snap className="shadow">Library</snap>, y un export con nombre{" "}
-        <snap className="shadow">Book</snap>. <snap className="shadow">App.js</snap> importa ambos.
-        Intenta editar <snap className="shadow">&lt;Book /&gt;</snap> cambiándolo a{" "}
-        <snap className="shadow">&lt;Library /&gt;</snap> y viceversa en este ejemplo:
+        Ahora <span className="shadow">Library.js</span> contiene dos exports: un export por defecto{" "}
+        <span className="shadow">Library</span>, y un export con nombre{" "}
+        <span className="shadow">Book</span>. <span className="shadow">App.js</span> importa ambos.
+        Intenta editar <span className="shadow">&lt;Book /&gt;</span> cambiándolo a{" "}
+        <span className="shadow">&lt;Library /&gt;</span> y viceversa en este ejemplo:
       </p>
       <pre className="ide">
         <code>
@@ -390,11 +390,11 @@ const Union = () => {
           Library.js
           <ol type={"a"} start="1">
             <li>
-              Exporta el componente <snap className="shadow">Book</snap> como un{" "}
-              <b>export con nombre llamado</b> <snap className="shadow">Book</snap>.
+              Exporta el componente <span className="shadow">Book</span> como un{" "}
+              <b>export con nombre llamado</b> <span className="shadow">Book</span>.
             </li>
             <li>
-              Exporta el componente <snap className="shadow">Library</snap> como un{" "}
+              Exporta el componente <span className="shadow">Library</span> como un{" "}
               <b>export por defecto</b>.
             </li>
           </ol>
@@ -403,15 +403,15 @@ const Union = () => {
           App.js
           <ol type={"a"} start="1">
             <li>
-              Importa <snap className="shadow">Book</snap> como un <b>import con nombre llamado</b>{" "}
-              <snap className="shadow">Book</snap> desde <snap className="shadow">Library.js</snap>.
+              Importa <span className="shadow">Book</span> como un <b>import con nombre llamado</b>{" "}
+              <span className="shadow">Book</span> desde <span className="shadow">Library.js</span>.
             </li>
             <li>
-              Importa <snap className="shadow">Library</snap> como un <b>import por defecto</b>{" "}
-              desde <snap className="shadow">Library.js</snap>.
+              Importa <span className="shadow">Library</span> como un <b>import por defecto</b>{" "}
+              desde <span className="shadow">Library.js</span>.
             </li>
             <li>
-              Exporta el componente raíz <snap className="shadow">App</snap> como un{" "}
+              Exporta el componente raíz <span className="shadow">App</span> como un{" "}
               <b>export por defecto</b>.
             </li>
           </ol>

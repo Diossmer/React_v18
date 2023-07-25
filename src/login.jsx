@@ -102,6 +102,20 @@ export default function Login({ isLogged, onNext, onBack }) {
           <a href="#changeprops">Cómo las props cambian con el tiempo</a>
         </li>
       </ul>
+      <ul className={isLogged === 6 ? "show" : "hide"}>
+        <li>
+          <a href="#">lol</a>
+        </li>
+        <li>
+          <a href="#">lol</a>
+        </li>
+        <li>
+          <a href="#">lol</a>
+        </li>
+        <li>
+          <a href="#">lol</a>
+        </li>
+      </ul>
     </div>
   );
 }
