@@ -99,7 +99,7 @@ export default function Login({ isLogged, onNext, onBack }) {
           <a href="#pasarchildrem">Pasar JSX como hijos</a>
         </li>
         <li>
-          <a href="#masObjetos">Más diversión con objetos de JavaScript y llaves</a>
+          <a href="#changeprops">Cómo las props cambian con el tiempo</a>
         </li>
       </ul>
     </div>

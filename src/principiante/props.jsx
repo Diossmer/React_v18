@@ -197,13 +197,43 @@ export default function Props() {
       </p>
       <pre className="ide">
         <code>
+          <span className={"greendark"}>&#47;&#47;utils.js</span>
+          {"\n"}
+        </code>
+        <code>
+          <span className={"pink"}>export </span>
+          <span className={"blue"}>function </span>
+          <span className={"yellow"}>getImageUrl</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>person</span>,<span className={"celeste"}>size</span>
+          <span className={"white"}>=</span>
+          <span className={"orange"}>&#39;s&#39;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}> &#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          <span className={"yellow"}>&#40;</span>
+          {"\n    "}
+          <span className={"orange"}>&#39;https://i.imgur.com/&#39;</span>{" "}
+          <span className={"white"}>+</span> <span className={"celeste"}>person</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>imageId</span> <span className={"white"}>+</span>{" "}
+          <span className={"celeste"}>size</span> <span className={"white"}>+</span>{" "}
+          <span className={"orange"}>&#39;.jpg&#39;</span>
+          {"\n  "}
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+        </code>
+      </pre>
+      <pre className="ide">
+        <code>
           <span className={"greendark"}>&#47;&#47;App.js</span>
           {"\n"}
         </code>
         <code>
-          <span className={"pink"}>import </span>
-          <span className={"celeste"}> getImageUrl </span>
-          <span className={"pink"}> from </span>
+          <span className={"pink"}>import</span> <span className="blue">&#123;</span>{" "}
+          <span className={"celeste"}>getImageUrl</span> <span className="blue">&#125;</span>{" "}
+          <span className={"pink"}>from</span>{" "}
           <span className={"orange"}>&#39;./utils.js&#39;</span>;{"\n\n"}
         </code>
         <code>
@@ -535,6 +565,258 @@ export default function Props() {
         elementos JSX separados. ¡Más información sobre esto a continuación!
       </p>
       <h3 id="pasarchildrem">Pasar JSX como hijos</h3>
+      <p>Es común anidar etiquetas nativas del navegador:</p>
+      <pre className="ide">
+        &lt;<span className={"blue"}>div</span>&gt;{"\n  "}
+        &lt;<span className={"blue"}>img</span> /&gt;{"\n"}
+        &lt;/<span className={"blue"}>div</span>&gt;
+      </pre>
+      <p>En ocasiones, querrás anidar tus propios componentes de la misma forma:</p>
+      <pre className="ide">
+        &lt;/<span className={"green"}>card</span>&gt;{"\n  "}
+        &lt;<span className={"green"}>Book</span> /&gt;{"\n"}
+        &lt;/<span className={"green"}>card</span>&gt;
+      </pre>
+      <p>
+        Al anidar contenido dentro de una etiqueta JSX, el componente padre recibirá ese contenido a
+        través de una prop llamada <span className={"blue"}>children</span>. En el ejemplo a
+        continuación, el componente <span className={"blue"}>Card</span> recibe una prop{" "}
+        <span className={"blue"}>children</span> con el valor de{" "}
+        <span className={"blue"}>&lt;Book /&gt;</span> y lo renderiza dentro de un div contenedor:
+      </p>
+      <pre className="ide">
+        <code>
+          <span className={"greendark"}>&#47;&#47;utils.js</span>
+          {"\n"}
+        </code>
+        <code>
+          <span className={"pink"}>export </span>
+          <span className={"blue"}>function </span>
+          <span className={"yellow"}>getImageUrl</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>person</span>,<span className={"celeste"}>size</span>
+          <span className={"white"}>=</span>
+          <span className={"orange"}>&#39;s&#39;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}> &#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"orange"}>&#39;https://i.imgur.com/&#39;</span>{" "}
+          <span className={"white"}>+</span> <span className={"celeste"}>person</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>imageId</span> <span className={"white"}>+</span>{" "}
+          <span className={"celeste"}>size</span> <span className={"white"}>+</span>{" "}
+          <span className={"orange"}>&#39;.jpg&#39;</span>
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+        </code>
+      </pre>
+      <pre className="ide">
+        <code>
+          <span className={"greendark"}>&#47;&#47;Book.js</span>
+          {"\n"}
+        </code>
+        <code>
+          <span className={"pink"}>import</span> <span className="blue">&#123;</span>{" "}
+          <span className={"celeste"}>getImageUrl</span> <span className="blue">&#125;</span>{" "}
+          <span className={"pink"}>from</span>{" "}
+          <span className={"orange"}>&#39;./utils.js&#39;</span>;{"\n\n"}
+        </code>
+        <code>
+          <span className={"pink"}>export </span>
+          <span className={"pink"}>default </span>
+          <span className={"blue"}>function </span>
+          <span className={"yellow"}>Book</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>person</span>,<span className={"celeste"}>size</span>
+          <span className={"blue"}>&#125;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}> &#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          <span className={"yellow"}>&#40;</span>
+          {"\n    "}
+          <code>
+            &lt;<span className="blue">img</span> <span className="celeste">className</span>
+            <span className="white">=</span>
+            <span className="orange">&quot;book&quot;</span> <span className="celeste">src</span>
+            <span className="white">=</span>
+            <span className="blue">&#123;</span>
+            <span className={"yellow"}>getImageUrl</span>
+            <span className={"orange"}>&#40;</span>
+            <span className={"celeste"}>person</span>
+            <span className={"orange"}>&#41;</span>
+            <span className="blue">&#125;</span> <span className="celeste">alt</span>
+            <span className="white">=</span>
+            <span className="blue">&#123;</span>
+            <span className={"celeste"}>person</span>
+            <span className={"white"}>.</span>
+            <span className={"celeste"}>name</span>
+            <span className="blue">&#125;</span> <span className="celeste">width</span>
+            <span className="white">=</span>
+            <span className="blue">&#123;</span>
+            <span className={"pink"}>size</span>
+            <span className="blue">&#125;</span> <span className="celeste">height</span>
+            <span className="white">=</span>
+            <span className="blue">&#123;</span>
+            <span className={"pink"}>size</span>
+            <span className="blue">&#125;</span> /&gt;
+          </code>
+          {"\n  "}
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+        </code>
+      </pre>
+      <pre className="ide">
+        <code>
+          <span className={"greendark"}>&#47;&#47;App.js</span>
+          {"\n"}
+        </code>
+        <code>
+          <span className={"pink"}>import</span> <span className={"celeste"}>Book</span>{" "}
+          <span className={"pink"}>from</span> <span className={"orange"}>&#39;./Book.js&#39;</span>
+          ;{"\n\n"}
+        </code>
+        <code>
+          <span className={"blue"}>function </span>
+          <span className={"yellow"}>Card</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>children</span>
+          <span className={"blue"}>&#125;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}> &#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          <span className={"yellow"}>&#40;</span>
+          {"\n    "}
+          &lt;<span className="blue">div</span>&gt;{"\n      "}
+          <span className="white">&#123;</span>
+          <span className="white">children</span>
+          <span className="white">&#125;</span>
+          {"\n    "}&lt;/
+          <span className="blue">div</span>
+          &gt;
+          {"\n  "}
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className={"pink"}>export </span>
+          <span className={"pink"}>default </span>
+          <span className={"blue"}>function </span>
+          <span className={"yellow"}>Profile</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}> &#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          <span className={"yellow"}>&#40;</span>
+          {"\n    "}
+          &lt;<span className="blue">Card</span>&gt;
+          {"\n      "}
+          &lt;<span className="blue">Book</span> <span className="celeste">size</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">100</span>
+          <span className="blue">&#125;</span> <span className="celeste">person</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="blue">&#123;</span> <span className="celeste">name</span>
+          <span className="white">:</span>
+          <span className="orange">&#39;Katsuko Saruhashi&#39;</span>,{" "}
+          <span className="celeste">imageId</span>
+          <span className="white">:</span>
+          <span className="orange">&#39;YfeOqp2&#39;</span> <span className="blue">&#125;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n    "}
+          &lt;/<span className="blue">Card</span>&gt;
+          {"\n  "}
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+        </code>
+      </pre>
+      <p>
+        Prueba cambiando <span className={"shadow"}>&lt;Book&gt;</span> dentro de{" "}
+        <span className={"shadow"}>&lt;Card&gt;</span> con algún texto para ver cómo el componente{" "}
+        <span className={"shadow"}>Card</span> puede envolver cualquier contenido anidado. No es
+        necesario que el componente «sepa» qué se está renderizando dentro de él. Este patrón
+        flexible se puede observar en muchos casos.
+      </p>
+      <p>
+        Puedes imaginar un componente con una prop <span className={"shadow"}>children</span> como
+        si tuviera un «hueco» que puede ser «llenado» por sus componentes padres con JSX arbitrario.
+        La prop children suele utilizarse para crear envoltorios visuales como paneles, rejillas,
+        etc.
+      </p>
+      <img src="../../public/i_children-prop.png" alt="inherit" />
+      <h3 id="changeprops">Cómo las props cambian con el tiempo</h3>
+      <p>
+        El componente <span className={"shadow"}>Clock</span> que se muestra a continuación recibe
+        dos props de su componente padre: <span className={"shadow"}>color</span> y{" "}
+        <span className={"shadow"}>time</span>. &#40;Se omite el código del componente padre porque
+        utiliza <span className={"note"}>estado</span>, del cual no ahondaremos en este
+        momento.&#41;
+      </p>
+      <p>Prueba cambiando el color en la lista desplegable que aparece a continuación:</p>
+      <pre className="ide">
+        <code>
+          <span className={"greendark"}>&#47;&#47;Clock.js</span>
+          {"\n"}
+        </code>
+        <code>
+          <span className={"pink"}>export </span>
+          <span className={"pink"}>default </span>
+          <span className={"blue"}>function </span>
+          <span className={"yellow"}>Profile</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}> &#123;</span>
+          {"\n  "}
+          <span className={"pink"}>return </span>
+          <span className={"yellow"}>&#40;</span>
+          {"\n    "}
+          &lt;<span className="blue">h1</span> <span className="celeste">style</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;&#123;</span>
+          <span className="celeste">color</span>
+          <span className="white">:</span>
+          <span className="celeste">color</span>
+          <span className="blue">&#125;&#125;</span>&gt;
+          {"\n      "}
+          <span className="blue">&#123;</span>
+          <span className="celeste">time</span>
+          <span className="blue">&#125;</span>
+          {"\n    "}
+          &lt;/<span className="blue">h1</span>&gt;
+          {"\n  "}
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+        </code>
+      </pre>
+      <p>
+        Este ejemplo demuestra que{" "}
+        <b>un componente puede recibir props que cambian a lo largo del tiempo</b>. ¡Las props no
+        siempre son estáticas! Aquí, la prop <span className={"shadow"}>time</span> cambia a cada
+        segundo, y la prop <span className={"shadow"}>color</span> cambia cuando se elige un color
+        diferente. Las props reflejan los datos de un componente en cualquier momento, y no sólo al
+        inicio.
+      </p>
+      <p>
+        Sin embargo, las props son <span className={"note"}>inmutables</span>—un término de la
+        informática que significa «inalterable». Si un componente necesita cambiar sus props (por
+        ejemplo, en respuesta a una interacción del usuario o nuevos datos), debe «solicitar» a su
+        componente padre que le pase nuevas props—¡un nuevo objeto! Las props antiguas se
+        descartarán y eventualmente el motor de JavaScript liberará la memoria que ocupaban.
+      </p>
+      <p>
+        <b>No intentes «cambiar las props»</b>. Cuando necesites responder al input del usuario
+        (como cambiar el color seleccionado), deberás «establecer un estado», lo cual puedes
+        aprender en <span className={"note"}>El estado: la memoria de un componente</span>.
+      </p>
     </>
   );
 }
