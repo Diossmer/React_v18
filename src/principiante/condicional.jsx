@@ -2,28 +2,10 @@ import "./Principiante.css";
 
 const Condicional = () => {
   let popo = `
-export default function PackingList() {
-  return (
-    <section>
-      <h1>Sally Ride's Packing List</h1>
-      <ul>
-        <Item 
-          isPacked={true} 
-          name="Space suit" 
-        />
-        <Item 
-          isPacked={true} 
-          name="Helmet with a golden leaf" 
-        />
-        <Item 
-          isPacked={false} 
-          name="Photo of Tam" 
-        />
-      </ul>
-    </section>
-  );
+if (isPacked) {
+  return null;
 }
-
+return <li className="item">{name}</li>;
   `;
   return (
     <>
@@ -201,8 +183,76 @@ export default function PackingList() {
 			  	<span className="celeste">name</span>
 			  	<span className="blue">&#125;</span>
 					&lt;/<span className="blue">li</span>&gt;;{"\n"}
-					<span className="yellow">&#125;</span>
+					<span className="yellow">&#125;</span>{"\n"}
         </code>
+      <code>
+          <span className="pink">export</span> <span className="pink">default</span>{" "}
+          <span className="blue">function</span>{" "}
+          <span className="yellow">PackingList</span>
+          <span className="yellow">&#40;</span>
+          <span className="yellow">&#41;</span>{" "}
+          <span className="yellow">&#123;</span>
+          {"\n  "}
+          <span className="pink">return</span>
+          <span className="yellow">&#40;</span>
+          {"\n    "}
+          &lt;<span className="blue">section</span>&gt;
+          {"\n    "}&lt;<span className="blue">h1</span>&gt;
+          <span className="white">Sally Ride&#39;s Packing List</span>&lt;/
+          <span className="blue">h1</span>&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Space suit&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Helmet with a golden leaf&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">false</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Photo of Tam&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n    "}&lt;/<span className="blue">section</span>&gt;
+          {"\n  "}
+          <span className="yellow">&#41;</span>;{"\n"}
+          <span className="yellow">&#125;</span>
+        </code>
+      </pre>
+      <p>
+      Prueba a editar lo que se devuelve en cualquiera de los dos casos y observa cómo cambia el resultado.
+      </p>
+      <p>
+      Observa cómo estás creando una lógica de ramificación con las sentencias <span className="shadow">if</span>{" "}
+      y <span className="shadow">return</span> de JavaScript. En React, el flujo de control{" "}
+      (como las condiciones) es manejado por JavaScript.
+      </p>
+      <h3>Devolución de nada con null</h3>
+      <p>
+      En algunas situaciones, no querrás mostrar nada en absoluto. Por ejemplo, digamos que no quieres mostrar{" "}
+      elementos empaquetados en absoluto. Un componente debe devolver algo. En este caso, puedes devolver{" "}
+      <span className="shadow">null</span>:
+      </p>
+      <pre className="ide">
       {popo}
       </pre>
     </>
