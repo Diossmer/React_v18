@@ -1,26 +1,29 @@
 import "./Principiante.css";
 
 export default function Rederizado(){
-let popo = `
-const chemists = people.filter(person =>
-  person.profession === 'chemist'
-);
-`
-let popo2 = `
-const listItems = chemists.map(person =>
-  <li>
-     <img
-       src={getImageUrl(person)}
-       alt={person.name}
-     />
-     <p>
-       <b>{person.name}:</b>
-       {' ' + person.profession + ' '}
-       known for {person.accomplishment}
-     </p>
-  </li>
-);
-`
+let popo =
+`import { people } from './data.js';
+import { getImageUrl } from './utils.js';
+
+export default function List() {
+  const chemists = people.filter(person =>
+    person.profession === 'chemist'
+  );
+  const listItems = chemists.map(person =>
+    <li>
+      <img
+        src={getImageUrl(person)}
+        alt={person.name}
+      />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  );
+  return <ul>{listItems}</ul>;
+}`;
 	return (
 		<>
 			<h1>Renderizado de listas</h1>
@@ -276,15 +279,111 @@ const listItems = chemists.map(person =>
 				<span className="shadow">person.profession === &#39;chemist&#39;</span>:
 				</li>
 				<pre className="ide">
-				{popo}
+				<code>
+					<span className="blue">const</span>{" "}
+					<span className="celeste">chemists</span>{" "}
+					<span className="white">=</span>{" "}
+					<span className="celeste">people</span>
+					<span className="white">.</span>
+					<span className="green">filter</span>
+					<span className="yellow">&#40;</span>
+					<span className="celeste">person</span>{" "}
+					<span className="white">=&gt;</span>
+					{"\n  "}
+					<span className="celeste">person</span>
+					<span className="white">.</span>
+					<span className="blue">profession</span>{" "}
+					<span className="white">===</span>{" "}
+					<span className="orange">&#39;chemist&#39;</span>
+					{"\n"}
+					<span className="yellow">&#41;</span>;
+				</code>
 				</pre>
 				<li>
 				Ahora <b>mapea</b> sobre <span className="shadow">chemists</span>:
 				</li>
 				<pre className="ide">
-				{popo2}
+				<code>
+						<span className="blue">const</span>{" "}
+						<span className="celeste">listItems</span>{" "}
+						<span className="white">=</span>{" "}
+						<span className="celeste">chemists</span>
+						<span className="yellow">.</span>
+						<span className="green">map</span>
+						<span className="yellow">&#40;</span>
+						<span className="celeste">person</span>{" "}
+						<span className="white">=&gt;</span>
+						{"\n  "}
+						&lt;<span className="blue">li</span>&gt;
+						{"\n    "}
+						&lt;<span className="blue">img</span>{" "}
+						
+						<span className="celeste">src</span>
+						<span className="white">=</span>
+						<span className="blue">&#123;</span>
+						<span className="green">getImageUrl</span>
+						<span className="yellow">&#40;</span>
+						<span className="celeste">person</span>
+						<span className="yellow">&#41;</span>
+						<span className="blue">&#125;</span>{" "}
+						<span className="celeste">alt</span>
+						<span className="white">=</span>
+						<span className="blue">&#123;</span>
+						<span className="celeste">person</span>
+						<span className="white">.</span>
+						<span className="celeste">name</span>
+						<span className="blue">&#125;</span>/&gt;
+						{"\n    "}
+						&lt;<span className="blue">p</span>&gt;
+						{"\n      "}
+						&lt;<span className="blue">b</span>&gt;
+						<span className="blue">&#123;</span>
+						<span className="celeste">person</span>
+						<span className="white">.</span>
+						<span className="celeste">name</span>
+						<span className="blue">&#125;</span>
+						<span className="white">:</span>
+						&lt;/<span className="blue">b</span>&gt;
+						{"\n      "}
+						<span className="blue">&#123;</span>
+						<span className="orange">&#39; &#39;</span>{" "}
+						<span className="white">+</span>{" "}
+						<span className="celeste">person</span>
+						<span className="blue">.</span>
+						<span className="celeste">profession</span>{" "}
+						<span className="white">+</span>{" "}
+						<span className="orange">&#39; &#39;</span>
+						<span className="blue">&#125;</span>
+						{"\n      "}
+						<span className="orange">Known for</span>{" "}
+						<span className="blue">&#123;</span>
+						<span className="celeste">person</span>
+						<span className="white">.</span>
+						<span className="celeste">accomplishment</span>
+						<span className="blue">&#125;</span>
+						{"\n    "}
+						&lt;/<span className="blue">p</span>&gt;
+						{"\n  "}
+						&lt;/<span className="blue">li</span>&gt;
+						{"\n"}
+						<span className="yellow">&#41;</span>;
+					</code>
+				</pre>
+				<li>Por último, <b>devuelve</b> el listItems de tu componente:</li>
+				<pre className="ide">
+					<code>
+						<span className="pink">return</span>{" "}
+						&lt;<span className="blue">ul</span>&gt;
+						<span className="blue">&#123;</span>
+						<span className="celeste">listItems</span>
+						<span className="blue">&#125;</span>
+						&lt;/<span className="blue">li</span>&gt;;
+					</code>
 				</pre>
 			</ol>
+			<pre className="ide">
+			{popo}
+			</pre>
 		</>
 	)
 }
