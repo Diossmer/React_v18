@@ -693,9 +693,9 @@ export default function Props() {
           <span className={"yellow"}>&#40;</span>
           {"\n    "}
           &lt;<span className="blue">div</span>&gt;{"\n      "}
-          <span className="white">&#123;</span>
-          <span className="white">children</span>
-          <span className="white">&#125;</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">children</span>
+          <span className="blue">&#125;</span>
           {"\n    "}&lt;/
           <span className="blue">div</span>
           &gt;

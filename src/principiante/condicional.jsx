@@ -1,6 +1,23 @@
 import "./Principiante.css";
 
 const Condicional = () => {
+let popo = `
+function Item({ name, isPacked }) {
+  let itemContent = name;
+  if (isPacked) {
+    itemContent = (
+      <del>
+        {name + " ✔"}
+      </del>
+    );
+  }
+  return (
+    <li className="item">
+      {itemContent}
+    </li>
+  );
+}
+`;
   return (
     <>
       <h1>Renderizado condicional</h1>
@@ -717,6 +734,289 @@ const Condicional = () => {
 				<span className="celeste">name</span>;
 			</code>
       </pre>
+      <p>
+      Utiliza una sentencia <span className="shadow">if</span> para reasignar una expresión JSX{" "}
+      a <span className="shadow">itemContent</span> si <span className="shadow">isPacked</span> es{" "}
+      <span className="shadow">true</span>:
+      </p>
+      <pre className="ide">
+      	<code>
+		    	<span className="pink">if</span>
+		    	<span className="yellow">&#40;</span>
+		    	<span className="celeste">isPacked</span>
+		    	<span className="yellow">&#41;</span>{" "}
+		    	<span className="yellow">&#123;</span>
+		    	{"\n  "}
+		    	<span className="celeste">itemContent</span>{" "}
+					<span className="white">=</span>{" "}
+		    	<span className="celeste">name</span>{" "}
+		    	<span className="white">+</span>{" "}
+		    	<span className="blue">&quot;</span>{" "}
+		    	<span className="green">✔</span>
+					<span className="blue">&quot;</span>;{"\n"}
+					<span className="yellow">&#125;</span>{"\n"}
+        </code>
+      </pre>
+      <p>
+      <span className="note">Las llaves abren la «ventana a JavaScript»</span>.{" "}
+      Inserta la variable con llaves en el árbol JSX devuelto, anidando la expresión previamente{" "}
+      calculada dentro de JSX:
+      </p>
+      <pre className="ide">
+      	<code>
+		    	&lt;<span className="blue">li</span>
+			  	{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	{"\n  "}
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">itemContent</span>
+			  	<span className="blue">&#125;</span>
+					{"\n"}
+					&lt;/<span className="blue">li</span>&gt;{" "}
+	      </code>
+      </pre>
+      <p>
+      Este estilo es el más verboso, pero también el más flexible. Aquí está en acción:
+      </p>
+      <pre className="ide">
+      	<code>
+				  <span className="blue">function</span>{" "}
+				  <span className="yellow">Item</span>
+				  <span className="yellow">&#40;</span>
+				  <span className="blue">&#123;</span>
+				  <span className="celeste">name</span>,{" "}
+				  <span className="celeste">isPacked</span>
+				  <span className="blue">&#125;</span>
+				  <span className="yellow">&#40;</span>
+				  <span className="yellow">&#123;</span>{"\n  "}
+		    </code>
+		    <code>
+					<span className="blue">let</span>{" "}
+					<span className="celeste">itemContent</span>{" "}
+					<span className="white">=</span>{" "}
+					<span className="celeste">name</span>;
+					{"\n  "}
+				</code>
+				<code>
+		    	<span className="pink">if</span>
+		    	<span className="yellow">&#40;</span>
+		    	<span className="celeste">isPacked</span>
+		    	<span className="yellow">&#41;</span>{" "}
+		    	<span className="yellow">&#123;</span>
+		    	{"\n    "}
+		    	<span className="celeste">itemContent</span>{" "}
+					<span className="white">=</span>{" "}
+		    	<span className="celeste">name</span>{" "}
+		    	<span className="white">+</span>{" "}
+		    	<span className="blue">&quot;</span>{" "}
+		    	<span className="green">✔</span>
+					<span className="blue">&quot;</span>;{"\n  "}
+					<span className="yellow">&#125;</span>{"\n  "}
+        </code>
+		    <code>
+			  	<span className="pink">return</span>
+			  	{" "}
+			  	<span className="pink">&#40;</span>
+			  	{"\n    "}
+			  	<code>
+		    	&lt;<span className="blue">li</span>
+			  	{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	{"\n      "}
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">itemContent</span>
+			  	<span className="blue">&#125;</span>
+					{"\n    "}
+					&lt;/<span className="blue">li</span>&gt;{" "}
+	      </code>
+					{"\n  "}
+					<span className="pink">&#41;</span>;
+					{"\n"}
+					<span className="yellow">&#125;</span>
+					{"\n\n"}
+		    </code>
+      	<code>
+          <span className="pink">export</span> <span className="pink">default</span>{" "}
+          <span className="blue">function</span>{" "}
+          <span className="yellow">PackingList</span>
+          <span className="yellow">&#40;</span>
+          <span className="yellow">&#41;</span>{" "}
+          <span className="yellow">&#123;</span>
+          {"\n  "}
+          <span className="pink">return</span>
+          <span className="yellow">&#40;</span>
+          {"\n    "}
+          &lt;<span className="blue">section</span>&gt;
+          {"\n    "}&lt;<span className="blue">h1</span>&gt;
+          <span className="white">Sally Ride&#39;s Packing List</span>&lt;/
+          <span className="blue">h1</span>&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Space suit&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Helmet with a golden leaf&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">false</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Photo of Tam&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n    "}&lt;/<span className="blue">section</span>&gt;
+          {"\n  "}
+          <span className="yellow">&#41;</span>;{"\n"}
+          <span className="yellow">&#125;</span>
+        </code>
+      </pre>
+      <p>
+      Como antes, esto funciona no sólo para el texto, sino también para JSX arbitrario:
+      </p>
+      <pre className="ide">
+      	<code>
+				  <span className="blue">function</span>{" "}
+				  <span className="yellow">Item</span>
+				  <span className="yellow">&#40;</span>
+				  <span className="blue">&#123;</span>
+				  <span className="celeste">name</span>,{" "}
+				  <span className="celeste">isPacked</span>
+				  <span className="blue">&#125;</span>
+				  <span className="yellow">&#40;</span>
+				  <span className="yellow">&#123;</span>{"\n  "}
+	    	</code>
+	    	<code>
+					<span className="blue">let</span>{" "}
+					<span className="celeste">itemContent</span>{" "}
+					<span className="white">=</span>{" "}
+					<span className="celeste">name</span>;
+					{"\n  "}
+				</code>
+				<code>
+		    	<span className="pink">if</span>
+		    	<span className="yellow">&#40;</span>
+		    	<span className="celeste">isPacked</span>
+		    	<span className="yellow">&#41;</span>{" "}
+		    	<span className="yellow">&#123;</span>
+		    	{"\n    "}
+		    	<span className="celeste">itemContent</span>{" "}
+					<span className="white">=</span>{" "}
+		    	<span className="yellow">&#40;</span>
+			  	&lt;<span className="blue">del</span>&gt;
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">name</span>{" "}
+			  	<span className="white">+</span>{" "}
+			  	<span className="orange">&#39; <span className="green">✔</span>&#39;</span>
+			  	<span className="blue">&#125;</span>
+			  	&lt;/<span className="blue">del</span>&gt;
+			  	<span className="yellow">&#41;</span>;{"\n  "}
+					<span className="yellow">&#125;</span>{"\n  "}
+        </code>
+		    <code>
+			  	<span className="pink">return</span>
+			  	{" "}
+			  	<span className="pink">&#40;</span>
+			  	{"\n    "}
+			  	<code>
+		    	&lt;<span className="blue">li</span>
+			  	{" "}
+			  	<span className="celeste">className</span>
+			  	<span className="white">=</span>
+			  	<span className="orange">&quot;item&quot;</span>&gt;
+			  	{"\n      "}
+			  	<span className="blue">&#123;</span>
+			  	<span className="celeste">itemContent</span>
+			  	<span className="blue">&#125;</span>
+					{"\n    "}
+					&lt;/<span className="blue">li</span>&gt;{" "}
+	      </code>
+					{"\n  "}
+					<span className="pink">&#41;</span>;
+					{"\n"}
+					<span className="yellow">&#125;</span>
+					{"\n\n"}
+		    </code>
+      	<code>
+          <span className="pink">export</span> <span className="pink">default</span>{" "}
+          <span className="blue">function</span>{" "}
+          <span className="yellow">PackingList</span>
+          <span className="yellow">&#40;</span>
+          <span className="yellow">&#41;</span>{" "}
+          <span className="yellow">&#123;</span>
+          {"\n  "}
+          <span className="pink">return</span>
+          <span className="yellow">&#40;</span>
+          {"\n    "}
+          &lt;<span className="blue">section</span>&gt;
+          {"\n    "}&lt;<span className="blue">h1</span>&gt;
+          <span className="white">Sally Ride&#39;s Packing List</span>&lt;/
+          <span className="blue">h1</span>&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Space suit&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">true</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Helmet with a golden leaf&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}&lt;<span className="green">Item</span>{" "}
+          <span className="celeste">isPacked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="pink">false</span>
+          <span className="blue">&#125;</span> <span className="celeste">name</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&quot;Photo of Tam&quot;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n    "}&lt;<span className="blue">ul</span>&gt;
+          {"\n    "}&lt;/<span className="blue">section</span>&gt;
+          {"\n  "}
+          <span className="yellow">&#41;</span>;{"\n"}
+          <span className="yellow">&#125;</span>
+        </code>
+      </pre>
+      <p>
+      Si no estás familiarizado con JavaScript, esta variedad de estilos puede parecer abrumadora{" "}
+      al principio. Sin embargo, aprenderlos te ayudará a leer y escribir cualquier código JavaScript{" "}
+      — ¡y no sólo los componentes de React! Escoge el que prefieras para empezar, y luego vuelve{" "}
+      a consultar esta referencia si olvidas cómo funcionan los demás.
+      </p>
     </>
   );
 };
