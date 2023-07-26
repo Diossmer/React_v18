@@ -1,25 +1,25 @@
 import "./Principiante.css";
 
 export default function Rederizado(){
-let popo = `const people = [{
-  id: 0,
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-}, {
-  id: 1,
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-}, {
-  id: 2,
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
-}, {
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',  
-}, {
-  name: 'Subrahmanyan Chandrasekhar',
-  profession: 'astrophysicist',
-}];
+let popo = `
+const chemists = people.filter(person =>
+  person.profession === 'chemist'
+);
+`
+let popo2 = `
+const listItems = chemists.map(person =>
+  <li>
+     <img
+       src={getImageUrl(person)}
+       alt={person.name}
+     />
+     <p>
+       <b>{person.name}:</b>
+       {' ' + person.profession + ' '}
+       known for {person.accomplishment}
+     </p>
+  </li>
+);
 `
 	return (
 		<>
@@ -254,8 +254,37 @@ let popo = `const people = [{
 				</code>
 			</pre>
 			<p>
-			Digamos que quieres una manera de mostrar solo las personas cuya profesión sea <span className="shadow">&#39;chemist&#39;</span>. Puedes usar el método <span className="shadow">filter()</span> de JavaScript para devolver solo esas personas. Este método coge un array de objetos, los pasa por un «test» (una función que devuelve <span className="shadow">true</span> o <span className="shadow">false</span>), y devuelve un nuevo array de solo esos objetos que han pasado el test (que han devuelto <span className="shadow">true</span>).
+			Digamos que quieres una manera de mostrar solo las personas cuya profesión sea{" "}
+			<span className="shadow">&#39;chemist&#39;</span>. Puedes usar el método{" "}
+			<span className="shadow">filter()</span> de JavaScript para devolver solo esas personas.{" "}
+			Este método coge un array de objetos, los pasa por un «test» (una función que devuelve{" "}
+			<span className="shadow">true</span> o <span className="shadow">false</span>), y devuelve{" "}
+			un nuevo array de solo esos objetos que han pasado el test (que han devuelto{" "}
+			<span className="shadow">true</span>).
 			</p>
+			<p>
+			Tú solo quieres los objetos donde <span className="shadow">profession</span> es{" "}
+			<span className="shadow">&#39;chemist&#39;</span>. La función <b>«test»</b> para esto se ve{" "}
+			como <span className="shadow">(person) =&gt; person.profession === &#39;chemist&#39;</span>.{" "}
+			Aquí está cómo juntarlo:
+			</p>
+			<ol type="1" start="1">
+				<li>
+				<b>Crea</b> un nuevo array solo de personas que sean «químicos»,{" "}
+				<span className="shadow">chemists</span>, llamando al método <span className="shadow">filter()</span>{" "}
+				en <span className="shadow">people</span> filtrando por{" "}
+				<span className="shadow">person.profession === &#39;chemist&#39;</span>:
+				</li>
+				<pre className="ide">
+				{popo}
+				</pre>
+				<li>
+				Ahora <b>mapea</b> sobre <span className="shadow">chemists</span>:
+				</li>
+				<pre className="ide">
+				{popo2}
+				</pre>
+			</ol>
 		</>
 	)
 }
