@@ -1,23 +1,6 @@
 import "./Principiante.css";
 
 const Condicional = () => {
-let popo = `
-function Item({ name, isPacked }) {
-  let itemContent = name;
-  if (isPacked) {
-    itemContent = (
-      <del>
-        {name + " ✔"}
-      </del>
-    );
-  }
-  return (
-    <li className="item">
-      {itemContent}
-    </li>
-  );
-}
-`;
   return (
     <>
       <h1>Renderizado condicional</h1>

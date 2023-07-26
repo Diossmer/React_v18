@@ -11,6 +11,7 @@ import Marcado from "./principiante/marcadojsx";
 import Llaves from "./principiante/llavesjsx";
 import Props from "./principiante/props";
 import Condicional from "./principiante/condicional";
+import Renderizado from "./principiante/Renderizado";
 
 function App() {
   const [isLogged, setIsLogged] = useState(0);
@@ -45,6 +46,7 @@ function App() {
         {isLogged == 4 && <Llaves />}
         {isLogged == 5 && <Props />}
         {isLogged == 6 && <Condicional />}
+        {isLogged == 7 && <Renderizado />}
       </div>
 
       <a href="#irArriba">
