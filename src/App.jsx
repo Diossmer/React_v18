@@ -12,6 +12,7 @@ import Llaves from "./principiante/llavesjsx";
 import Props from "./principiante/props";
 import Condicional from "./principiante/condicional";
 import Renderizado from "./principiante/Renderizado";
+import Mantener from "./principiante/mantenerPuros";
 
 function App() {
   const [isLogged, setIsLogged] = useState(0);
@@ -31,8 +32,12 @@ function App() {
         <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining" target="_blank" rel="noreferrer">
-          <img src={mdn} className="logo mdn" alt="Mdn logo"/>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={mdn} className="logo mdn" alt="Mdn logo" />
         </a>
       </div>
 
@@ -47,6 +52,7 @@ function App() {
         {isLogged == 5 && <Props />}
         {isLogged == 6 && <Condicional />}
         {isLogged == 7 && <Renderizado />}
+        {isLogged == 8 && <Mantener />}
       </div>
 
       <a href="#irArriba">
