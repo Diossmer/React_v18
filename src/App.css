@@ -28,7 +28,9 @@
   filter: contrast(5%) sepia(5) hue-rotate(310deg) saturate(1000%);
 	}
 }
-
+.imgpuro{
+	width:50%;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
