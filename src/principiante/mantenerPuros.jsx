@@ -350,8 +350,8 @@ export default function Mantener() {
 			<span className="pink">&#123;</span>{"\n    "}
 			<span className="celeste">cups</span>
 			<span className="white">.</span>
-			<span className="celeste">push</span>
-			<span className="blue">&#40;</span>{"\n      "}
+			<span className="yellow">push</span>
+			<span className="yellow">&#40;</span>{"\n      "}
 			&lt;<span className="green">Cup</span>{" "}
 			<span className="celeste">key</span>
 			<span className="blue">=</span>
@@ -363,7 +363,7 @@ export default function Mantener() {
 			<span className="blue">&#123;</span>
 			<span className="celeste">i</span>
 			<span className="blue">&#125;</span>{" "}/&gt;{"\n    "}
-			<span className="blue">&#41;</span>;{"\n  "}
+			<span className="yellow">&#41;</span>;{"\n  "}
 			<span className="pink">&#125;</span>{"\n  "}
 			<span className="pink">return</span>{" "}
 			<span className="celeste">cups</span>;{"\n"}
