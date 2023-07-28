@@ -43,7 +43,7 @@ function App() {
         </a>
       </div>
       <MCER isLogged={isLogged} />
-      {`Pagina: ${isLogged === 0 && isLogged}`}
+      {`Pagina: ${isLogged}`}
       <Login isLogged={isLogged} onNext={Next} onBack={Back} />
       <div className="container">
         {!isLogged && <Inicio />}
