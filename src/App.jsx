@@ -13,6 +13,8 @@ import Props from "./principiante/props";
 import Condicional from "./principiante/condicional";
 import Renderizado from "./principiante/Renderizado";
 import Mantener from "./principiante/mantenerPuros";
+import Interactivo from "./basico/Interactividad";
+import MCER from "./MCER";
 
 function App() {
   const [isLogged, setIsLogged] = useState(0);
@@ -40,7 +42,7 @@ function App() {
           <img src={mdn} className="logo mdn" alt="Mdn logo" />
         </a>
       </div>
-
+      <MCER isLogged={isLogged} />
       {`Pagina: ${isLogged === 0 ? "Inicio" : isLogged}`}
       <Login isLogged={isLogged} onNext={Next} onBack={Back} />
       <div className="container">
@@ -53,6 +55,8 @@ function App() {
         {isLogged == 6 && <Condicional />}
         {isLogged == 7 && <Renderizado />}
         {isLogged == 8 && <Mantener />}
+
+        {isLogged == 9 && <Interactivo />}
       </div>
 
       <a href="#irArriba">

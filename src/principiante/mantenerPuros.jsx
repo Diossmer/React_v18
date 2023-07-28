@@ -30,7 +30,7 @@ export default function Mantener() {
         matemáticas.
       </p>
       <p>Considera esta fórmula matemática: y = 2x.</p>
-      <ul style={{ width: "35rem" }}>
+      <ul style={{ width: "30rem" }}>
         <li>Si x = 2 entonces y = 4. Siempre.</li>
         <li>Si x = 3 entonces y = 6. Siempre.</li>
         <li>
