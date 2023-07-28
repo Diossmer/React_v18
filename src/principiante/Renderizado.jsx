@@ -91,7 +91,7 @@ export default function Rederizado() {
             <span className="blue">&#123;</span>
             <span className="celeste">listItems</span>
             <span className="blue">&#125;</span>
-            &lt;/<span className="blue">li</span>&gt;;
+            &lt;/<span className="blue">ul</span>&gt;;
           </code>
         </pre>
       </ol>
@@ -130,7 +130,7 @@ export default function Rederizado() {
           <span className="blue">&#123;</span>
           <span className="celeste">listItems</span>
           <span className="blue">&#125;</span>
-          &lt;/<span className="blue">li</span>&gt;;
+          &lt;/<span className="blue">ul</span>&gt;;
         </code>
       </pre>
       <p>Date cuenta que el sandbox anterior muestra un error por consola:</p>
@@ -321,7 +321,7 @@ export default function Rederizado() {
             <span className="blue">&#123;</span>
             <span className="celeste">listItems</span>
             <span className="blue">&#125;</span>
-            &lt;/<span className="blue">li</span>&gt;;
+            &lt;/<span className="blue">ul</span>&gt;;
           </code>
         </pre>
       </ol>
