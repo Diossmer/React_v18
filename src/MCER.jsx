@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
 const MCER = ({ isLogged }) => {
   const CEFR =
-    isLogged >= 0 && isLogged <= 9
+    isLogged >= 0 && isLogged <= 8
       ? "Principiante"
       : isLogged >= 9 && isLogged <= 11
       ? "Básico"
