@@ -2,6 +2,7 @@ import reactLogo from "/react.svg";
 import viteLogo from "./assets/vite.svg";
 import mdn from "/mdn_web.svg";
 import "./App.css";
+import "./Principiante.css";
 import Inicio from "./Inicio/InicioRapido";
 import { useState } from "react";
 import Login from "./login";
@@ -31,8 +32,16 @@ function App() {
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://es.react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a
+          href="https://es.react.dev"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src={reactLogo}
+            className="logo react"
+            alt="React logo"
+          />
         </a>
         <a
           href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining"
