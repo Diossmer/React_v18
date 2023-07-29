@@ -151,7 +151,7 @@ export default function Inicio() {
           añadir el estilo en el mismo archivo especifico.
         </div>
         <div>
-          En el Archivo css <span className="shadow">*.css</span>{" "}
+          En el archivo css <span className="shadow">*.css</span>{" "}
           generaliza en la aplicacion el uso de su estilos
         </div>
       </div>

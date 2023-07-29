@@ -185,7 +185,8 @@ const Interactivo = () => {
       </p>
       <pre className="ide">
         <code>
-          <span>&#47;&#47;data.js</span>
+          <span className="greendark">&#47;&#47;data.js</span>
+          {"\n"}
         </code>
         <code>
           <span className="blue">const</span>{" "}
@@ -228,122 +229,337 @@ const Interactivo = () => {
             sosteniendo delicadamente un cerebro humano en la punta de
             sus dedos.&#39;
           </span>
-          ,{"\n"}
+          {"\n"}
           <span className="blue">&#125;</span>,
           <span className="blue">&#123;</span>
           {"\n  "}
-          <span className="celeste">id</span>
-          <span className="white">:</span>
-          <span className="pink">1</span>,{"\n  "}
           <span className="celeste">name</span>
           <span className="white">:</span>
+          <span className="pink">&#39;Floralis Genérica&#39;</span>,
+          {"\n  "}
+          <span className="celeste">artist</span>
+          <span className="white">:</span>
+          <span className="orange">&#39;Eduardo Catalano&#39;</span>,
+          {"\n  "}
+          <span className="celeste">description</span>
+          <span className="white">:</span>
           <span className="orange">
-            &#39;Mario José Molina-Pasquel Henríquez&#39;
+            &#39;Esta enorme flor plateada (75 pies o 23 m) se
+            encuentra en Buenos Aires. Está diseñado para moverse,
+            cerrando sus pétalos por la tarde o cuando soplan fuertes
+            vientos y abriéndolos por la mañana.&#39;
           </span>
           ,{"\n  "}
-          <span className="celeste">profession</span>
-          <span className="white">:</span>
-          <span className="orange">&#39;chemist&#39;</span>,{"\n  "}
-          <span className="celeste">accomplishment</span>
+          <span className="celeste">url</span>
           <span className="white">:</span>
           <span className="orange">
-            &#39;discovery of Arctic ozone hole&#39;
+            &#39;https://i.imgur.com/ZF6s192m.jpg&#39;
           </span>
           ,{"\n  "}
-          <span className="celeste">imageId</span>
+          <span className="celeste">alt</span>
           <span className="white">:</span>
-          <span className="orange">&#39;mynHUSa&#39;</span>,{"\n"}
+          <span className="orange">
+            &#39;Una gigantesca escultura de flor metálica con pétalos
+            reflectantes como espejos y fuertes estambres.&#39;
+          </span>
+          {"\n"}
           <span className="blue">&#125;</span>,
           <span className="blue">&#123;</span>
           {"\n  "}
-          <span className="celeste">id</span>
-          <span className="white">:</span>
-          <span className="pink">2</span>,{"\n  "}
           <span className="celeste">name</span>
           <span className="white">:</span>
-          <span className="orange">
-            &#39;Mohammad Abdus Salam&#39;
-          </span>
-          ,{"\n  "}
-          <span className="celeste">profession</span>
-          <span className="white">:</span>
-          <span className="orange">&#39;physicist&#39;</span>,{"\n  "}
-          <span className="celeste">accomplishment</span>
+          <span className="pink">&#39;Eternal Presence&#39;</span>,
+          {"\n  "}
+          <span className="celeste">artist</span>
           <span className="white">:</span>
           <span className="orange">
-            &#39;electromagnetism theory&#39;
+            &#39;John Woodrow Wilson&#39;
           </span>
           ,{"\n  "}
-          <span className="celeste">imageId</span>
+          <span className="celeste">description</span>
           <span className="white">:</span>
-          <span className="orange">&#39;bE7W1ji&#39;</span>,{"\n"}
+          <span className="orange">
+            &#39;Wilson era conocido por su preocupación por la
+            igualdad, la justicia social, así como por las cualidades
+            esenciales y espirituales de la humanidad. Este bronce
+            masivo (7 pies o 2,13 m) representa lo que él describió
+            como &quot;una presencia negra simbólica infundida con un
+            sentido de humanidad universal&quot;.&quot;&#39;
+          </span>
+          ,{"\n  "}
+          <span className="celeste">url</span>
+          <span className="white">:</span>
+          <span className="orange">
+            &#39;https://i.imgur.com/aTtVpES.jpg&#39;
+          </span>
+          ,{"\n  "}
+          <span className="celeste">alt</span>
+          <span className="white">:</span>
+          <span className="orange">
+            &#39;La escultura que representa una cabeza humana parece
+            omnipresente y solemne. Irradia calma y serenidad.&#39;
+          </span>
+          {"\n"}
           <span className="blue">&#125;</span>,
           <span className="blue">&#123;</span>
           {"\n  "}
-          <span className="celeste">id</span>
-          <span className="white">:</span>
-          <span className="pink">3</span>,{"\n  "}
           <span className="celeste">name</span>
           <span className="white">:</span>
-          <span className="orange">&#39;Percy Lavon Julian&#39;</span>
-          ,{"\n  "}
-          <span className="celeste">profession</span>
-          <span className="white">:</span>
-          <span className="orange">&#39;chemist&#39;</span>,{"\n  "}
-          <span className="celeste">accomplishment</span>
+          <span className="pink">&#39;Moai&#39;</span>,{"\n  "}
+          <span className="celeste">artist</span>
           <span className="white">:</span>
           <span className="orange">
-            &#39;pioneering cortisone drugs, steroids and birth
-            control pills&#39;
+            &#39;Artista desconocido&#39;
           </span>
           ,{"\n  "}
-          <span className="celeste">imageId</span>
-          <span className="white">:</span>
-          <span className="orange">&#39;IOjWm71&#39;</span>,{"\n"}
-          <span className="blue">&#125;</span>,
-          <span className="blue">&#123;</span>
-          {"\n  "}
-          <span className="celeste">id</span>
-          <span className="white">:</span>
-          <span className="pink">4</span>,{"\n  "}
-          <span className="celeste">name</span>
+          <span className="celeste">description</span>
           <span className="white">:</span>
           <span className="orange">
-            &#39;Subrahmanyan Chandrasekhar&#39;
+            &#39;Ubicados en la Isla de Pascua, hay 1,000 moai, o
+            estatuas monumentales existentes, creadas por los primeros
+            rapa nui, que algunos creen que representan a ancestros
+            deificados.&#39;
           </span>
           ,{"\n  "}
-          <span className="celeste">profession</span>
-          <span className="white">:</span>
-          <span className="orange">&#39;astrophysicist&#39;</span>,
-          {"\n  "}
-          <span className="celeste">accomplishment</span>
+          <span className="celeste">url</span>
           <span className="white">:</span>
           <span className="orange">
-            &#39;white dwarf star mass calculations&#39;
+            &#39;https://i.imgur.com/RCwLEoQm.jpg&#39;
           </span>
           ,{"\n  "}
-          <span className="celeste">imageId</span>
+          <span className="celeste">alt</span>
           <span className="white">:</span>
-          <span className="orange">&#39;lrWQx8l&#39;</span>,{"\n"}
+          <span className="orange">
+            &#39;Tres bustos monumentales de piedra con las cabezas
+            desproporcionadamente grandes con rostros sombríos.&#39;
+          </span>
+          {"\n"}
           <span className="blue">&#125;</span>
           <span className="yellow">&#93;</span>;{"\n\n"}
         </code>
       </pre>
+
       <pre className="ide">
         <code>
-          <span className={"pink"}>import </span>
-          <span className={"celeste"}> useState </span>
-          <span className={"pink"}> from </span>
-          <span className={"orange"}>&#39;react&#39;</span>;{"\n\n"}
+          <span className="greendark">&#47;&#47;App.js</span>
+          {"\n"}
         </code>
         <code>
-          <span className={"pink"}>import </span>
-          <span className={"celeste"}> Library </span>
-          <span className={"pink"}> from </span>
-          <span className={"orange"}>&#39;./Library.js&#39;</span>;
+          <span className={"pink"}>import</span>{" "}
+          <span className={"blue"}>&#123;</span>{" "}
+          <span className={"celeste"}>useState</span>{" "}
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"pink"}>from</span>{" "}
+          <span className={"orange"}>&#39;react&#39;</span>;{"\n"}
+          <span className={"pink"}>import</span>{" "}
+          <span className={"blue"}>&#123;</span>{" "}
+          <span className={"celeste"}>sculptureList</span>{" "}
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"pink"}>from</span>{" "}
+          <span className={"orange"}>&#39;./data.js&#39;</span>;
           {"\n\n"}
         </code>
+        <code>
+          <span className={"pink"}>export</span>{" "}
+          <span className={"pink"}>default</span>{" "}
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>Gallery</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className="blue">const</span>{" "}
+          <span className="yellow">&#91;</span>
+          <span className="celeste">index</span>,{" "}
+          <span className="celeste">setIndex</span>
+          <span className="yellow">&#93;</span>{" "}
+          <span className="white">=</span>{" "}
+          <span className="green">useState</span>
+          <span className="yellow">&#40;</span>
+          <span className="orange">0</span>
+          <span className="yellow">&#41;</span>;{"\n"}
+          <span className="blue">const</span>{" "}
+          <span className="yellow">&#91;</span>
+          <span className="celeste">showMore</span>,{" "}
+          <span className="celeste">setShowMore</span>
+          <span className="yellow">&#93;</span>{" "}
+          <span className="white">=</span>{" "}
+          <span className="green">useState</span>
+          <span className="yellow">&#40;</span>
+          <span className="celeste">false</span>
+          <span className="yellow">&#41;</span>;{"\n"}
+          <span className="blue">const</span>{" "}
+          <span className="celeste">hasNext</span>{" "}
+          <span className="white">=</span>{" "}
+          <span className="celeste">index</span>{" "}
+          <span className="white">&lt;</span>{" "}
+          <span className="celeste">sculptureList</span>
+          <span className="white">.</span>
+          <span className="blue">length</span>{" "}
+          <span className="white">-</span>{" "}
+          <span className="orange">1</span>;{"\n\n"}
+        </code>
+        <code>
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>handleNextClick</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n  "}
+          <span className={"pink"}>if</span>
+          <span className={"blue"}>&#40;</span>
+          <span className={"celeste"}>hasNext</span>
+          <span className={"blue"}>&#41;</span>{" "}
+          <span className={"pink"}>&#123;</span>
+          {"\n    "}
+          <span className={"yellow"}>setIndex</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>index</span>{" "}
+          <span className={"white"}>+</span>{" "}
+          <span className={"orange"}>1</span>
+          <span className={"yellow"}>&#41;</span>
+          {"\n  "}
+          <span className={"pink"}>&#125;</span>
+          <span className={"blue"}>else</span>
+          <span className={"pink"}>&#123;</span>
+          {"\n    "}
+          <span className={"yellow"}>setIndex</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"orange"}>0</span>
+          <span className={"yellow"}>&#41;</span>
+          {"\n  "}
+          <span className={"pink"}>&#125;</span>
+          {"\n"}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>handleMoreClick</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n  "}
+          <span className={"yellow"}>setShowMore</span>
+          <span className={"yellow"}>&#40;</span>!
+          <span className={"celeste"}>showMore</span>
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className={"blue"}>let</span>{" "}
+          <span className={"celeste"}>sculpture</span>{" "}
+          <span className={"white"}>=</span>{" "}
+          <span className={"celeste"}>sculptureList</span>
+          <span className={"yellow"}>&#91;</span>
+          <span className={"celeste"}>index</span>
+          <span className={"yellow"}>&#93;</span>;{"\n  "}
+          <span className={"pink"}>return</span>{" "}
+          <span className={"yellow"}>&#40;</span>
+          {"\n    "}
+          &lt;&gt;
+          {"\n      "}
+          &lt;<span className={"blue"}>button</span>{" "}
+          <span className={"celeste"}>onClick</span>
+          <span className={"white"}>=</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"yellow"}>handleNextClick</span>
+          <span className={"blue"}>&#125;</span>&gt;
+          <span className={"white"}>Siguiente</span>
+          &lt;/<span className={"blue"}>button</span>&gt;
+          {"\n      "}
+          &lt;<span className={"blue"}>h2</span>&gt;
+          {"\n        "}
+          &lt;<span className={"blue"}>i</span>&gt;
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>sculpture</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>name</span>
+          <span className={"blue"}>&#125;</span>
+          &lt;/<span className={"blue"}>i</span>&gt;{" "}
+          <span className={"white"}>de</span>{" "}
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>sculpture</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>artist</span>
+          <span className={"blue"}>&#125;</span>
+          {"\n      "}
+          &lt;/<span className={"blue"}>h2</span>&gt;
+          {"\n      "}
+          &lt;<span className={"blue"}>h3</span>&gt;
+          {"\n        "}
+          <span className={"yellow"}>&#40;</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>index</span>
+          <span className={"white"}>+</span>
+          <span className={"orange"}>1</span>
+          <span className={"yellow"}>&#125;</span>{" "}
+          <span className={"white"}>of</span>{" "}
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>sculptureList</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>length</span>
+          <span className={"blue"}>&#125;</span>
+          <span className={"yellow"}>&#41;</span>
+          {"\n      "}
+          &lt;/<span className={"blue"}>h3</span>&gt;
+          {"\n      "}
+          &lt;<span className={"blue"}>button</span>{" "}
+          <span className={"celeste"}>onClick</span>
+          <span className={"white"}>=</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"yellow"}>handleMoreClick</span>
+          <span className={"blue"}>&#125;</span>&gt;
+          {"\n        "}
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>showMore</span>
+          <span className={"pink"}>?</span>
+          <span className={"orange"}>&#39;Esconder&#39;</span>
+          <span className={"pink"}>:</span>
+          <span className={"orange"}>&#39;Mostrar&#39;</span>
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"white"}>detalles</span>
+          {"\n      "}
+          &lt;/<span className={"blue"}>button</span>&gt;
+          {"\n      "}
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>showMore</span>{" "}
+          <span className={"white"}>&&</span> &lt;
+          <span className={"blue"}>p</span>&gt;
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>sculpture</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>description</span>
+          <span className={"blue"}>&#125;</span>
+          &lt;/<span className={"blue"}>p</span>&gt;
+          <span className={"blue"}>&#125;</span>
+          {"\n      "}
+          &lt;<span className={"blue"}>img</span>{" "}
+          <span className={"celeste"}>src</span>
+          <span className={"white"}>=</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>sculpture</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>url</span>
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"celeste"}>alt</span>
+          <span className={"white"}>=</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>sculpture</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>alt</span>
+          <span className={"blue"}>&#125;</span> /&gt;
+          {"\n    "}
+          &lt;/&gt;
+          {"\n  "}
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>;
+        </code>
       </pre>
+      <h3>Renderizado y confirmación</h3>
     </>
   );
 };
