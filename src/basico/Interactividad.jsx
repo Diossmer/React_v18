@@ -133,6 +133,7 @@ const Interactivo = () => {
           <span className={"yellow"}>&#125;</span>
         </code>
       </pre>
+      <hr />
       <h3>El estado: la memoria de un componente</h3>
       <p>
         Los componentes a menudo necesitan cambiar lo que aparece en
@@ -338,7 +339,6 @@ const Interactivo = () => {
           <span className="yellow">&#93;</span>;{"\n\n"}
         </code>
       </pre>
-
       <pre className="ide">
         <code>
           <span className="greendark">&#47;&#47;App.js</span>
@@ -559,6 +559,7 @@ const Interactivo = () => {
           <span className={"yellow"}>&#125;</span>;
         </code>
       </pre>
+      <hr />
       <h3>Renderizado y confirmación</h3>
       <p>
         Antes de que tus componentes se muestren en la pantalla, deben
@@ -622,6 +623,7 @@ const Interactivo = () => {
           </figure>
         </li>
       </ul>
+      <hr />
       <h3>El estado como una instantánea</h3>
       <p>
         A diferencia de las variables regulares de JavaScript, el
@@ -842,6 +844,22 @@ const Interactivo = () => {
         {"\n  "}
         <span className="pink">&#41;</span>;{"\n"}
         <span className="yellow">&#125;</span>
+      </pre>
+      <hr />
+      <h3>Poner en cola una serie de actualizaciones de estado</h3>
+      <p>
+        Este componente tiene errores: hacer clic en «+3» incrementa
+        la puntuación solo una vez.
+      </p>
+      <pre className="ide">
+        <code>
+          <span className={"pink"}>import</span>{" "}
+          <span className={"blue"}>&#123;</span>{" "}
+          <span className={"celeste"}>useState</span>{" "}
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"pink"}>from</span>{" "}
+          <span className={"orange"}>&#39;react&#39;</span>;{"\n\n"}
+        </code>
       </pre>
     </>
   );
