@@ -860,6 +860,116 @@ const Interactivo = () => {
           <span className={"pink"}>from</span>{" "}
           <span className={"orange"}>&#39;react&#39;</span>;{"\n\n"}
         </code>
+        <code>
+          <span className={"pink"}>export</span>{" "}
+          <span className={"pink"}>default</span>{" "}
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>Form</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n\n  "}
+        </code>
+        <code>
+          <span className="blue">const</span>{" "}
+          <span className="yellow">&#91;</span>
+          <span className="celeste">score</span>,{" "}
+          <span className="celeste">setScore</span>
+          <span className="yellow">&#93;</span>{" "}
+          <span className="white">=</span>{" "}
+          <span className="green">useState</span>
+          <span className="yellow">&#40;</span>
+          <span className="orange">0</span>
+          <span className="yellow">&#41;</span>;
+          {"\n\n  "}
+        </code>
+        <code>
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>increment</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n    "}
+          <span className={"yellow"}>setScore</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>score</span>{" "}
+          <span className={"white"}>+</span>{" "}
+          <span className={"orange"}>1</span>
+          <span className={"yellow"}>&#41;</span>;{"\n  "}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className="pink">return</span>{" "}
+          <span className="pink">&#40;</span>
+          {"\n    "}
+        </code>
+        <code>
+        	&lt;&gt;
+        	{"\n      "}	
+        </code>
+        <code>
+          &lt;<span className="blue">button</span>{" "}
+          <span className="celeste">onClick</span>
+          <span className="white">=</span>
+          <span className="white">&#123;</span>
+          <span className="white">&#40;</span>
+          <span className="white">&#41;</span>
+          <span className="white">=&gt;</span>
+          <span className="green">increment</span>
+          <span className="white">&#40;</span>
+          <span className="white">&#41;</span>          
+          <span className="white">&#125;</span>&gt;
+          <span className="white">+1</span>
+          &lt;/<span className="blue">button</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">button</span>{" "}
+          <span className="celeste">onClick</span>
+          <span className="white">=</span>
+          <span className="white">&#123;</span>
+          <span className="white">&#40;</span>
+          <span className="white">&#41;</span>
+          <span className="white">=&gt;</span>
+          <span className="green">increment</span>
+          <span className="white">&#40;</span>
+          <span className="white">&#41;</span>;{" "}
+          <span className="green">increment</span>
+          <span className="white">&#40;</span>
+          <span className="white">&#41;</span>;{" "}
+          <span className="green">increment</span>
+          <span className="white">&#40;</span>
+          <span className="white">&#41;</span>;          
+          <span className="white">&#125;</span>&gt;
+          <span className="white">+3</span>
+          &lt;/<span className="blue">button</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+        	&lt;<span className="blue">h1</span>&gt;
+        	<span className="white">Puntaje:</span>{" "}
+        	<span className="blue">&#123;</span>
+        	<span className="celeste">score</span>
+        	<span className="blue">&#125;</span>
+        	&lt;/<span className="blue">h1</span>&gt;
+        	{"\n    "}
+        </code>
+        <code>
+        	&lt;/&gt;
+        	{"\n  "}	
+        </code>
+        <code>
+        	<span className="pink">&#41;</span>;
+        	{"\n"}
+        	<span className="yellow">&#125;</span>;
+        </code>
+      </pre>
+      <p>
+      <span className="note">El estado como una instantánea</span> explica por qué sucede esto. Al establecer el estado se solicita un nuevo rerenderizado, pero no lo cambia en el código que ya se está ejecutando. Entonces <span className="shadow">score</span> sigue siendo <span className="shadow">0</span> justo después de llamar a <span className="shadow">setScore&#40;score + 1&#41;</span>.
+      </p>
+      <pre className="ide">
+      123111;
       </pre>
     </>
   );
