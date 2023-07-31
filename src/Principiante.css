@@ -132,3 +132,13 @@ img{
         background-color: rgb(241, 113, 54);
     }
 }
+
+.renderizado{
+    & figure{
+        & div{
+            & img{
+                width: 200px;
+            }
+        }
+    }
+}

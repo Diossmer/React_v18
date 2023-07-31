@@ -560,6 +560,289 @@ const Interactivo = () => {
         </code>
       </pre>
       <h3>Renderizado y confirmación</h3>
+      <p>
+        Antes de que tus componentes se muestren en la pantalla, deben
+        ser renderizados por React. Comprender los pasos de este
+        proceso te ayudará a pensar en cómo se ejecuta tu código y
+        explicar su comportamiento.
+      </p>
+      <p>
+        Imagina que tus componentes son cocineros en la cocina,
+        montando sabrosos platos a partir de los ingredientes. En este
+        escenario, React es el camarero que hace las peticiones de los
+        clientes y les trae sus pedidos. Este proceso de solicitud y
+        servicio de UI tiene tres pasos:
+      </p>
+      <ol>
+        <li>
+          <b>Desencadenamiento</b> de un renderizado (entrega del
+          pedido del cliente a la cocina)
+        </li>
+        <li>
+          <b>Renderizado</b> del componente (preparación del pedido en
+          la cocina)
+        </li>
+        <li>
+          <b>Confirmación</b> con el DOM (poner el pedido sobre la
+          mesa)
+        </li>
+      </ol>
+      <ul>
+        <li className="renderizado">
+          <figure>
+            <div>
+              <img
+                src="public/i_render-and-commit1.png"
+                alt="desencadenamiento"
+              />
+            </div>
+            <figcaption>Desencadenamiento</figcaption>
+          </figure>
+        </li>
+        <li className="renderizado">
+          <figure>
+            <div>
+              <img
+                src="public/i_render-and-commit2.png"
+                alt="renderizado"
+              />
+            </div>
+            <figcaption>Renderizado</figcaption>
+          </figure>
+        </li>
+        <li className="renderizado">
+          <figure>
+            <div>
+              <img
+                src="i_render-and-commit3.png"
+                alt="confirmacion"
+              />
+            </div>
+            <figcaption>Confirmación</figcaption>
+          </figure>
+        </li>
+      </ul>
+      <h3>El estado como una instantánea</h3>
+      <p>
+        A diferencia de las variables regulares de JavaScript, el
+        estado de React se comporta más como una instantánea.
+        Establecerlo no cambia la variable de estado que ya tienes,
+        sino que activa una nuevo renderizado. ¡Esto puede ser
+        sorprendente al principio!
+      </p>
+      <pre className="ide">
+        <span className="celeste">console</span>
+        <span className="white">.</span>
+        <span className="yellow">log</span>
+        <span className="blue">&#40;</span>
+        <span className="celeste">count</span>
+        <span className="blue">&#41;;</span>{" "}
+        <span className="greendark">&#47;&#47; 0</span>
+        {"\n"}
+        <span className="yellow">setCount</span>
+        <span className="blue">&#40;</span>
+        <span className="celeste">count</span>
+        <span className="white">+</span>
+        <span className="orange">1</span>
+        <span className="blue">&#41;;</span>{" "}
+        <span className="greendark">
+          &#47;&#47; Solicitar un nuevo renderizado con 1
+        </span>
+        {"\n"}
+        <span className="celeste">console</span>
+        <span className="white">.</span>
+        <span className="yellow">log</span>
+        <span className="blue">&#40;</span>
+        <span className="celeste">count</span>
+        <span className="blue">&#41;;</span>{" "}
+        <span className="greendark">&#47;&#47; ¡Todavía 0!</span>
+      </pre>
+      <p>
+        Este comportamiento te ayuda a evitar errores sutiles. Aquí
+        hay una pequeña aplicación de chat. Intenta adivinar qué
+        sucede si presionas «Enviar» primero y luego cambias el
+        destinatario a Bob. ¿El nombre de quién aparecerá en la{" "}
+        <span className="shadow">alerta</span> cinco segundos después?
+      </p>
+      <pre className="ide">
+        <code>
+          <span className={"pink"}>import</span>{" "}
+          <span className={"blue"}>&#123;</span>{" "}
+          <span className={"celeste"}>useState</span>{" "}
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"pink"}>from</span>{" "}
+          <span className={"orange"}>&#39;react&#39;</span>;{"\n\n"}
+        </code>
+        <code>
+          <span className={"pink"}>export</span>{" "}
+          <span className={"pink"}>default</span>{" "}
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>Form</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className="blue">const</span>{" "}
+          <span className="yellow">&#91;</span>
+          <span className="celeste">to</span>,{" "}
+          <span className="celeste">setTo</span>
+          <span className="yellow">&#93;</span>{" "}
+          <span className="white">=</span>{" "}
+          <span className="green">useState</span>
+          <span className="yellow">&#40;</span>
+          <span className="orange">&#39;Alice&#39;</span>
+          <span className="yellow">&#41;</span>;{"\n"}
+          <span className="blue">const</span>{" "}
+          <span className="yellow">&#91;</span>
+          <span className="celeste">message</span>,{" "}
+          <span className="celeste">setMessage</span>
+          <span className="yellow">&#93;</span>{" "}
+          <span className="white">=</span>{" "}
+          <span className="green">useState</span>
+          <span className="yellow">&#40;</span>
+          <span className="orange">&#39;Hola&#39;</span>
+          <span className="yellow">&#41;</span>;{"\n\n"}
+        </code>
+        <code>
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>handleSubmit</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className="celeste">e</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n  "}
+          <span className={"celeste"}>e</span>
+          <span className={"white"}>.</span>
+          <span className={"yellow"}>preveventDefault</span>
+          <span className="blue">&#40;</span>
+          <span className={"blue"}>&#41;</span>;{"\n  "}
+          <span className={"yellow"}>setTimeout</span>
+          <span className="blue">&#40;</span>
+          <span className="pink">&#40;</span>
+          <span className={"pink"}>&#41;</span>
+          <span className={"white"}>=&gt;</span>
+          <span className={"pink"}>&#123;</span>
+          {"\n  "}
+          <span className={"yellow"}>alert</span>
+          <span className="blue">&#40;</span>
+          <span className="orange">
+            &#96;Le dijiste $&#123;message&#125; a
+            $&#123;to&#125;&#96;
+          </span>
+          <span className={"blue"}>&#41;</span>;{"\n  "}
+          <span className={"pink"}>&#125;</span>,
+          <span className="orange">5000</span>
+          <span className={"blue"}>&#41;</span>
+          {"\n"}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n  "}
+        </code>
+        <code>
+          <span className="pink">return</span>{" "}
+          <span className="pink">&#40;</span>
+          {"\n    "}
+        </code>
+        <code>
+          &lt;<span className="blue">form</span>{" "}
+          <span className="yellow">onSubmit</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="yellow">handleSubmit</span>
+          <span className="blue">&#125;</span>&gt;
+          {"\n      "}
+          &lt;<span className="blue">label</span>&gt;
+          {"\n        "}
+          <span className="white">Para</span>
+          <span className="white">:</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&#39; &#39;</span>
+          <span className="blue">&#125;</span>
+          {"\n        "}
+          &lt;<span className="blue">select</span>{" "}
+          <span className="celeste">value</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">to</span>
+          <span className="blue">&#125;</span>{" "}
+          <span className="celeste">onChange</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">e</span>{" "}
+          <span className="white">=&gt;</span>{" "}
+          <span className="yellow">setTo</span>
+          <span className="yellow">&#40;</span>
+          <span className="celeste">e</span>
+          <span className="white">.</span>
+          <span className="celeste">target</span>
+          <span className="white">.</span>
+          <span className="celeste">value</span>
+          <span className="yellow">&#41;</span>
+          <span className="blue">&#125;</span>&gt;
+          {"\n          "}
+          &lt;<span className="blue">option</span>{" "}
+          <span className="celeste">value</span>
+          <span className="white">=</span>
+          <span className="orange">&quot;Alice&quot;</span>&gt;
+          <span className="white">Alice</span>
+          &lt;/<span className="blue">option</span>&gt;
+          {"\n          "}
+          &lt;<span className="blue">option</span>{" "}
+          <span className="celeste">value</span>
+          <span className="white">=</span>
+          <span className="orange">&quot;Bob&quot;</span>&gt;
+          <span className="white">Bob</span>
+          &lt;/<span className="blue">option</span>&gt;
+          {"\n        "}
+          &lt;/<span className="blue">select</span>&gt;
+          {"\n      "}
+          &lt;/<span className="blue">label</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">textarea</span>
+          {"\n        "}
+          <span className="celeste">placeholder</span>
+          <span className="white">=</span>
+          <span className="orange">&quot;Message&quot;</span>
+          {"\n        "}
+          <span className="celeste">value</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">message</span>
+          <span className="blue">&#125;</span>
+          {"\n        "}
+          <span className="celeste">onChange</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">e</span>{" "}
+          <span className="white">=&gt;</span>{" "}
+          <span className="yellow">setMessage</span>
+          <span className="yellow">&#40;</span>
+          <span className="celeste">e</span>
+          <span className="white">.</span>
+          <span className="celeste">target</span>
+          <span className="white">.</span>
+          <span className="celeste">value</span>
+          <span className="yellow">&#41;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">button</span>{" "}
+          <span className="celeste">type</span>
+          <span className="white">=</span>
+          <span className="orange">&quot;submit&quot;</span>&gt;
+          <span className="white">Enviar</span>
+          &lt;/<span className="blue">button</span>&gt;
+          {"\n    "}
+        </code>
+        &lt;/<span className="blue">form</span>&gt;
+        {"\n  "}
+        <span className="pink">&#41;</span>;{"\n"}
+        <span className="yellow">&#125;</span>
+      </pre>
     </>
   );
 };
