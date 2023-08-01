@@ -1,4 +1,60 @@
 const Interactivo = () => {
+  const valid = `import { useState } from 'react';
+  import { useImmer } from 'use-immer';
+  
+  let nextId = 3;
+  const initialList = [
+    { id: 0, title: 'Big Bellies', seen: false },
+    { id: 1, title: 'Lunar Landscape', seen: false },
+    { id: 2, title: 'Terracotta Army', seen: true },
+  ];
+  
+  export default function BucketList() {
+    const [list, updateList] = useImmer(initialList);
+  
+    function handleToggle(artworkId, nextSeen) {
+      updateList(draft => {
+        const artwork = draft.find(a =>
+          a.id === artworkId
+        );
+        artwork.seen = nextSeen;
+      });
+    }
+  
+    return (
+      <>
+        <h1>Lista de deseos de arte</h1>
+        <h2>Mi lista de arte para ver:</h2>
+        <ItemList
+          artworks={list}
+          onToggle={handleToggle} />
+      </>
+    );
+  }
+  
+  function ItemList({ artworks, onToggle }) {
+    return (
+      <ul>
+        {artworks.map(artwork => (
+          <li key={artwork.id}>
+            <label>
+              <input
+                type="checkbox"
+                checked={artwork.seen}
+                onChange={e => {
+                  onToggle(
+                    artwork.id,
+                    e.target.checked
+                  );
+                }}
+              />
+              {artwork.title}
+            </label>
+          </li>
+        ))}
+      </ul>
+    );
+  }`;
   return (
     <>
       <h1>Agregar interactividad</h1>
@@ -1391,11 +1447,10 @@ const Interactivo = () => {
           &lt;/<span className="blue">label</span>&gt;
           {"\n      "}
         </code>
-
         <code>
           &lt;<span className="blue">label</span>&gt;
           {"\n        "}
-          <span className="white">Nombre:</span>
+          <span className="white">Título:</span>
           {"\n        "}
           &lt;<span className="blue">input</span>{" "}
           <span className="celeste">value</span>
@@ -1416,11 +1471,10 @@ const Interactivo = () => {
           &lt;/<span className="blue">label</span>&gt;
           {"\n      "}
         </code>
-
         <code>
           &lt;<span className="blue">label</span>&gt;
           {"\n        "}
-          <span className="white">Nombre:</span>
+          <span className="white">Ciudad:</span>
           {"\n        "}
           &lt;<span className="blue">input</span>{" "}
           <span className="celeste">value</span>
@@ -1444,7 +1498,7 @@ const Interactivo = () => {
         <code>
           &lt;<span className="blue">label</span>&gt;
           {"\n        "}
-          <span className="white">Nombre:</span>
+          <span className="white">Imagen:</span>
           {"\n        "}
           &lt;<span className="blue">input</span>{" "}
           <span className="celeste">value</span>
@@ -1466,42 +1520,42 @@ const Interactivo = () => {
           {"\n      "}
         </code>
         <code>
-          &lt;<span className="yellow">p</span>&gt;
+          &lt;<span className="blue">p</span>&gt;
           {"\n        "}
-          &lt;<span className="yellow">i</span>&gt;
-          <span className="yellow">&#123;</span>
-          <span className="yellow">person</span>
-          <span className="yellow">.</span>
-          <span className="yellow">artwork</span>
-          <span className="yellow">.</span>
-          <span className="yellow">title</span>
-          <span className="yellow">&#125;</span>
-          &lt;/<span className="yellow">i</span>&gt;
+          &lt;<span className="blue">i</span>&gt;
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">title</span>
+          <span className="blue">&#125;</span>
+          &lt;/<span className="blue">i</span>&gt;
           {"\n        "}
-          <span className="yellow">&#123;</span>
-          <span className="yellow">&#39; by &#39;</span>
-          <span className="yellow">&#125;</span>
+          <span className="blue">&#123;</span>
+          <span className="orange">&#39; by &#39;</span>
+          <span className="blue">&#125;</span>
           {"\n        "}
-          <span className="yellow">&#123;</span>
-          <span className="yellow">person</span>
-          <span className="yellow">.</span>
-          <span className="yellow">name</span>
-          <span className="yellow">&#125;</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">name</span>
+          <span className="blue">&#125;</span>
           {"\n        "}
-          &lt;<span className="yellow">br</span> /&gt;
+          &lt;<span className="blue">br</span> /&gt;
           {"\n        "}
           <span className="yellow">&#40;</span>
-          <span className="yellow">ubicado en</span>{" "}
-          <span className="yellow">&#123;</span>
-          <span className="yellow">person</span>
-          <span className="yellow">.</span>
-          <span className="yellow">artwork</span>
-          <span className="yellow">.</span>
-          <span className="yellow">city</span>
-          <span className="yellow">&#125;</span>
+          <span className="white">ubicado en</span>{" "}
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">city</span>
+          <span className="blue">&#125;</span>
           <span className="yellow">&#41;</span>
           {"\n      "}
-          &lt;/<span className="yellow">p</span>&gt;
+          &lt;/<span className="blue">p</span>&gt;
           {"\n      "}
         </code>
         <code>
@@ -1540,7 +1594,653 @@ const Interactivo = () => {
         una biblioteca como <span className="note">Immer</span> para
         reducir el código repetitivo:
       </p>
-      <pre className="ide"></pre>
+      <pre className="ide">
+        <code>
+          <span className="greendark">&#47;&#47; package.json</span>
+          {"\n"}
+        </code>
+        <code>
+          <span>&#123;</span>
+          {"\n  "}
+          <span>&quot;dependencies&quot;</span>
+          <span>:</span>
+          <span>&#123;</span>
+          {"\n    "}
+          <span>&quot;immer&quot;</span>
+          <span>:</span>
+          <span>&quot;1.7.3&quot;</span>,{"\n    "}
+          <span>&quot;react&quot;</span>
+          <span>:</span>
+          <span>&quot;latest&quot;</span>,{"\n    "}
+          <span>&quot;react-dom&quot;</span>
+          <span>:</span>
+          <span>&quot;latest&quot;</span>,{"\n    "}
+          <span>&quot;react-scripts&quot;</span>
+          <span>:</span>
+          <span>&quot;latest&quot;</span>,{"\n    "}
+          <span>&quot;use-immer&quot;</span>
+          <span>:</span>
+          <span>&quot;0.5.1&quot;</span>
+          {"\n  "}
+          <span>&#125;</span>,{"\n  "}
+          <span>&quot;scripts&quot;</span>
+          <span>:</span>
+          <span>&#123;</span>
+          {"\n    "}
+          <span>&quot;start&quot;</span>
+          <span>:</span>
+          <span>&quot;react-scripts start&quot;</span>,{"\n    "}
+          <span>&quot;build&quot;</span>
+          <span>:</span>
+          <span>&quot;react-scripts build&quot;</span>,{"\n    "}
+          <span>&quot;test&quot;</span>
+          <span>:</span>
+          <span>&quot;react-scripts test --env=jsdom&quot;</span>,
+          {"\n    "}
+          <span>&quot;eject&quot;</span>
+          <span>:</span>
+          <span>&quot;react-scripts eject&quot;</span>
+          {"\n  "}
+          <span>&#125;</span>,{"\n"}
+          <span>&quot;devDependencies&quot;</span>
+          <span>:</span>
+          <span>&#123;</span>
+          <span>&#125;</span>
+          {"\n"}
+          <span>&#125;</span>
+          {"\n"}
+        </code>
+      </pre>
+      <pre className="ide">
+        <code>
+          <span className={"pink"}>import</span>{" "}
+          <span className={"blue"}>&#123;</span>{" "}
+          <span className={"celeste"}>useImmer</span>{" "}
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"pink"}>from</span>{" "}
+          <span className={"orange"}>&#39;use-immer&#39;</span>;
+          {"\n\n"}
+        </code>
+        <code>
+          <span className={"pink"}>export</span>{" "}
+          <span className={"pink"}>default</span>{" "}
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>Form</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className="blue">const</span>{" "}
+          <span className="yellow">&#91;</span>
+          <span className="celeste">person</span>,{" "}
+          <span className="celeste">setPerson</span>
+          <span className="yellow">&#93;</span>{" "}
+          <span className="white">=</span>{" "}
+          <span className="green">useImmer</span>
+          <span className="yellow">&#40;</span>
+          <span className="blue">&#123;</span>
+          {"\n"}
+          <span className="celeste">name</span>
+          <span className="white">:</span>
+          <span className="orange">
+            &#39;Niki de Saint Phalle&#39;
+          </span>
+          ,{"\n"}
+          <span className="celeste">artwork</span>
+          <span className="white">:</span>
+          <span className="blue">&#123;</span>
+          {"\n  "}
+          <span className="celeste">title</span>
+          <span className="white">:</span>
+          <span className="orange">&#39;Blue Nana&#39;</span>,{"\n  "}
+          <span className="celeste">city</span>
+          <span className="white">:</span>
+          <span className="orange">&#39;Hamburgo&#39;</span>,{"\n  "}
+          <span className="celeste">image</span>
+          <span className="white">:</span>
+          <span className="orange">
+            &#39;https://i.imgur.com/Sd1AgUOm.jpg&#39;
+          </span>
+          ,{"\n"}
+          <span className="blue">&#125;</span>
+          {"\n"}
+          <span className="blue">&#125;</span>
+          <span className="yellow">&#41;</span>;{"\n\n"}
+        </code>
+        <code>
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>handleNameChange</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>e</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n    "}
+          <span className={"yellow"}>updatePerson</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>draft</span>
+          <span className={"white"}>=&gt;</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>draft</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>name</span>{" "}
+          <span className={"white"}>=</span>{" "}
+          <span className={"celeste"}>e</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>target</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>value</span>;
+          <span className={"blue"}>&#125;</span>
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>handleTitleChange</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>e</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n    "}
+          <span className={"yellow"}>updatePerson</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>draft</span>
+          <span className={"white"}>=&gt;</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>draft</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>artwork</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>title</span>{" "}
+          <span className={"white"}>=</span>{" "}
+          <span className="celeste">e</span>
+          <span className="white">.</span>
+          <span className="celeste">target</span>
+          <span className="white">.</span>
+          <span className="celeste">value</span>;{"\n  "}
+          <span className={"blue"}>&#125;</span>
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>handleCityChange</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>e</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n    "}
+          <span className={"yellow"}>updatePerson</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>draft</span>
+          <span className={"white"}>=&gt;</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>draft</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>artwork</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>city</span>{" "}
+          <span className={"white"}>=</span>{" "}
+          <span className="celeste">e</span>
+          <span className="white">.</span>
+          <span className="celeste">target</span>
+          <span className="white">.</span>
+          <span className="celeste">value</span>;{"\n  "}
+          <span className={"blue"}>&#125;</span>
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>handleImageChange</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>e</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n    "}
+          <span className={"yellow"}>updatePerson</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>draft</span>
+          <span className={"white"}>=&gt;</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>draft</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>artwork</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>image</span>{" "}
+          <span className={"white"}>=</span>{" "}
+          <span className="celeste">e</span>
+          <span className="white">.</span>
+          <span className="celeste">target</span>
+          <span className="white">.</span>
+          <span className="celeste">value</span>;{"\n  "}
+          <span className={"blue"}>&#125;</span>
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className="pink">return</span>{" "}
+          <span className="pink">&#40;</span>
+          {"\n    "}
+        </code>
+        <code>
+          &lt;&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">label</span>&gt;
+          {"\n        "}
+          <span className="white">Nombre:</span>
+          {"\n        "}
+          &lt;<span className="blue">input</span>{" "}
+          <span className="celeste">value</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">name</span>
+          <span className="blue">&#125;</span>{" "}
+          <span className="celeste">onChange</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="yellow">handleNameChange</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}
+          &lt;/<span className="blue">label</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">label</span>&gt;
+          {"\n        "}
+          <span className="white">Título:</span>
+          {"\n        "}
+          &lt;<span className="blue">input</span>{" "}
+          <span className="celeste">value</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">title</span>
+          <span className="blue">&#125;</span>{" "}
+          <span className="celeste">onChange</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="yellow">handleTitleChange</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}
+          &lt;/<span className="blue">label</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">label</span>&gt;
+          {"\n        "}
+          <span className="white">Ciudad:</span>
+          {"\n        "}
+          &lt;<span className="blue">input</span>{" "}
+          <span className="celeste">value</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">city</span>
+          <span className="blue">&#125;</span>{" "}
+          <span className="celeste">onChange</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="yellow">handleCityChange</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}
+          &lt;/<span className="blue">label</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">label</span>&gt;
+          {"\n        "}
+          <span className="white">Imagen:</span>
+          {"\n        "}
+          &lt;<span className="blue">input</span>{" "}
+          <span className="celeste">value</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">image</span>
+          <span className="blue">&#125;</span>{" "}
+          <span className="celeste">onChange</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="yellow">handleImageChange</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}
+          &lt;/<span className="blue">label</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">p</span>&gt;
+          {"\n        "}
+          &lt;<span className="blue">i</span>&gt;
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">title</span>
+          <span className="blue">&#125;</span>
+          &lt;/<span className="blue">i</span>&gt;
+          {"\n        "}
+          <span className="blue">&#123;</span>
+          <span className="orange">&#39; by &#39;</span>
+          <span className="blue">&#125;</span>
+          {"\n        "}
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">name</span>
+          <span className="blue">&#125;</span>
+          {"\n        "}
+          &lt;<span className="blue">br</span> /&gt;
+          {"\n        "}
+          <span className="yellow">&#40;</span>
+          <span className="white">ubicado en</span>{" "}
+          <span className="blue">&#123;</span>
+          <span className="celeste">person</span>
+          <span className="white">.</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">city</span>
+          <span className="blue">&#125;</span>
+          <span className="yellow">&#41;</span>
+          {"\n      "}
+          &lt;/<span className="blue">p</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className={"blue"}>img</span>{" "}
+          <span className={"celeste"}>src</span>
+          <span className={"white"}>=</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>person</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>artwork</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>image</span>
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"celeste"}>alt</span>
+          <span className={"white"}>=</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>person</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>artwork</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>title</span>
+          <span className={"blue"}>&#125;</span> /&gt;
+          {"\n    "}
+        </code>
+        <code>
+          &lt;/&gt;
+          {"\n  "}
+        </code>
+        <code>
+          <span className="pink">&#41;</span>;{"\n"}
+          <span className="yellow">&#125;</span>;
+        </code>
+      </pre>
+      <br />
+      <h3>Actualizar arrays en el estado</h3>
+      <p>
+        Los arrays son otro tipo de objetos de JavaScript mutables que
+        puedes almacenar en el estado y debes tratar como de solo
+        lectura. Al igual que con los objetos, cuando deseas
+        actualizar un array almacenado en el estado, se debe crear uno
+        nuevo (o hacer una copia de uno existente) y luego configurar
+        el estado para utilizar el nuevo array:
+      </p>
+      <pre className="ide">
+        <code>
+          <span className={"pink"}>import</span>{" "}
+          <span className={"blue"}>&#123;</span>{" "}
+          <span className={"celeste"}>useState</span>{" "}
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"pink"}>from</span>{" "}
+          <span className={"orange"}>&#39;react&#39;</span>;{"\n\n"}
+        </code>
+        <code>
+          <span className="blue">let</span>{" "}
+          <span className="celeste">nextId</span>{" "}
+          <span className="white">=</span>{" "}
+          <span className="orange">3</span>;{"\n"}
+        </code>
+        <code>
+          <span className="blue">const</span>{" "}
+          <span className="celeste">initialList</span>{" "}
+          <span className="white">=</span>{" "}
+          <span className="blue">&#91;</span>
+          {"\n"}
+        </code>
+        <code>
+          <span className="blue">&#123;</span>
+          <span className="celeste">id</span>
+          <span className="white">:</span>
+          <span className="orange">0</span>,{" "}
+          <span className="celeste">title</span>
+          <span className="white">:</span>
+          <span className="orange">&#39;Big Bellies&#39;</span>,
+          <span className="celeste">seen</span>
+          <span className="white">:</span>
+          <span className="orange">false</span>
+          <span className="blue">&#125;</span>,{"\n"}
+          <span className="blue">&#123;</span>
+          <span className="celeste">id</span>
+          <span className="white">:</span>
+          <span className="orange">1</span>,
+          <span className="celeste">title</span>
+          <span className="white">:</span>
+          <span className="orange">&#39;Lunar Landscape&#39;</span>,
+          <span className="celeste">seen</span>
+          <span className="white">:</span>
+          <span className="orange">false</span>
+          <span className="blue">&#125;</span>,{"\n"}
+          <span className="blue">&#123;</span>
+          <span className="celeste">id</span>
+          <span className="white">:</span>
+          <span className="orange">2</span>,
+          <span className="celeste">title</span>
+          <span className="white">:</span>
+          <span className="orange">&#39;Terracotta Army&#39;</span>,
+          <span className="celeste">seen</span>
+          <span className="white">:</span>
+          <span className="orange">true</span>
+          <span className="blue">&#125;</span>,{"\n"}
+        </code>
+        <code>
+          <span className="blue">&#93;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className={"pink"}>export</span>{" "}
+          <span className={"pink"}>default</span>{" "}
+          <span className={"blue"}>function</span>{" "}
+          <span className={"yellow"}>BucketList</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"yellow"}>&#41;</span>{" "}
+          <span className={"yellow"}>&#123;</span>
+          {"\n\n"}
+        </code>
+        <code>
+          <span className={"yellow"}>setList</span>
+          <span className={"yellow"}>&#40;</span>{" "}
+          <span className={"celeste"}>list</span>
+          <span className={"white"}>.</span>
+          <span className={"green"}>map</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>artwork</span>{" "}
+          <span className={"white"}>=&gt;</span>{" "}
+          <span className={"blue"}>&#123;</span>
+          {"\n    "}
+          <span className={"pink"}>if</span>
+          <span className={"pink"}>&#40;</span>{" "}
+          <span className={"celeste"}>artwork</span>
+          <span className={"white"}>.</span>
+          <span className={"celeste"}>id</span>{" "}
+          <span className={"white"}>===</span>{" "}
+          <span className={"celeste"}>artworkId</span>{" "}
+          <span className={"pink"}>&#41;</span>{" "}
+          <span className={"pink"}>&#123;</span>
+          {"\n      "}
+          <span className={"pink"}>return</span>{" "}
+          <span className={"blue"}>&#123;</span>{" "}
+          <span className={"celeste"}>...artwork</span>,{" "}
+          <span className={"celeste"}>seen</span>{" "}
+          <span className={"white"}>:</span>{" "}
+          <span className={"celeste"}>nextSeen</span>{" "}
+          <span className={"blue"}>&#125;</span>;{"\n    "}
+          <span className={"pink"}>&#125;</span>{" "}
+          <span className={"pink"}>else</span>{" "}
+          <span className={"pink"}>&#123;</span>
+          {"\n      "}
+          <span className={"pink"}>return</span>{" "}
+          <span className={"celeste"}>artwork</span>;{"\n    "}
+          <span className={"pink"}>&#125;</span>
+          {"\n  "}
+          <span className={"blue"}>&#125;</span>
+          <span className={"yellow"}>&#41;</span>
+          <span className={"yellow"}>&#41;</span>;{"\n"}
+          <span className={"yellow"}>&#125;</span>
+          {"\n\n  "}
+        </code>
+        <code>
+          <span className="pink">return</span>{" "}
+          <span className="pink">&#40;</span>
+          {"\n    "}
+        </code>
+        <code>
+          &lt;&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">h1</span>&gt; &lt;
+          <span className="white">Lista de deseos de arte</span>&gt;
+          &lt;/<span className="blue">h1</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className="blue">h2</span>&gt; &lt;
+          <span className="white">Mi lista de arte para ver:</span>
+          &gt; &lt;/<span className="blue">h2</span>&gt;
+          {"\n      "}
+        </code>
+        <code>
+          &lt;<span className={"green"}>ItemList</span>{" "}
+          <span className={"celeste"}>artworks</span>
+          <span className={"white"}>=</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>list</span>
+          <span className={"blue"}>&#125;</span>{" "}
+          <span className={"celeste"}>onToggle</span>
+          <span className={"white"}>=</span>
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>handleToggle</span>
+          <span className={"blue"}>&#125;</span> /&gt;
+          {"\n    "}
+        </code>
+        <code>
+          &lt;/&gt;
+          {"\n  "}
+        </code>
+        <code>
+          <span className="pink">&#41;</span>;{"\n"}
+          <span className="yellow">&#125;</span>;{"\n\n"}
+        </code>
+        <code>
+          &lt;<span className="blue">ul</span>&gt;{"\n  "}
+          <span className={"blue"}>&#123;</span>
+          <span className={"celeste"}>artworks</span>
+          <span className={"white"}>.</span>
+          <span className={"green"}>map</span>
+          <span className={"yellow"}>&#40;</span>
+          <span className={"celeste"}>artwork</span>{" "}
+          <span className={"white"}>=&gt;</span>{" "}
+          <span className={"blue"}>&#40;</span>
+          {"\n  "}
+          &lt;<span className="blue">li</span>{" "}
+          <span className="blue">key</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">artwork</span>
+          <span className="blue">.</span>
+          <span className="blue">id</span>
+          <span className="blue">&#125;</span>&gt;
+          {"\n    "}
+        </code>
+        <code>
+          &lt;<span className="blue">label</span>&gt;
+          {"\n      "}
+          &lt;<span className="blue">input</span>{" "}
+          <span className="celeste">type</span>
+          <span className="white">=</span>
+          <span className="celeste">&quot;checkbox&quot;</span>{" "}
+          <span className="celeste">checked</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">seen</span>
+          <span className="blue">&#125;</span>
+          {"\n        "}
+          <span className="celeste">onChange</span>
+          <span className="white">=</span>
+          <span className="blue">&#123;</span>
+          <span className="blue">&#40;</span>
+          <span className="celeste">e</span>
+          <span className="blue">&#41;</span>
+          <span className="white">=&gt;</span>
+          <span className="blue">&#123;</span>
+          <span className="yellow">onToggle</span>
+          <span className="yellow">&#40;</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">id</span>,{" "}
+          <span className="celeste">e</span>
+          <span className="white">.</span>
+          <span className="celeste">target</span>
+          <span className="white">.</span>
+          <span className="celeste">checked</span>
+          <span className="yellow">&#41;</span>;
+          <span className="blue">&#125;</span>
+          <span className="blue">&#125;</span> /&gt;
+          {"\n      "}
+          <span className="blue">&#123;</span>
+          <span className="celeste">artwork</span>
+          <span className="white">.</span>
+          <span className="celeste">title</span>
+          <span className="blue">&#125;</span>
+          {"\n    "}
+          &lt;/<span className="blue">label</span>&gt;
+          {"\n  "}
+        </code>
+        <code>
+          &lt;/<span className="blue">li</span>&gt;
+          {"\n"}
+          &lt;/<span className="blue">ul</span>&gt;
+        </code>
+      </pre>
+      <p>
+        Si copiar arrays en el código se vuelve tedioso, puedes usar
+        una biblioteca como <span className="note">Immer</span> para
+        reducir el código repetitivo:
+      </p>
+      <pre className="ide">{valid}</pre>
     </>
   );
 };
