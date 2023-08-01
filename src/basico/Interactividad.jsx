@@ -984,7 +984,7 @@ const Interactivo = () => {
           <span className="blue">&#41;;</span>{" "}
           <span className="greendark">&#47;&#47; 0</span>
           {"\n"}
-          <span className="yellow">setCount</span>
+          <span className="yellow">setScore</span>
           <span className="blue">&#40;</span>
           <span className="celeste">score</span>
           <span className="white">+</span>
@@ -1004,7 +1004,7 @@ const Interactivo = () => {
           {"\n"}
         </code>
         <code>
-          <span className="yellow">setCount</span>
+          <span className="yellow">setScore</span>
           <span className="blue">&#40;</span>
           <span className="celeste">score</span>
           <span className="white">+</span>
@@ -1022,7 +1022,7 @@ const Interactivo = () => {
           <span className="blue">&#41;;</span>{" "}
           <span className="greendark">&#47;&#47; 0</span>
           {"\n"}
-          <span className="yellow">setCount</span>
+          <span className="yellow">setScore</span>
           <span className="blue">&#40;</span>
           <span className="celeste">score</span>
           <span className="white">+</span>
