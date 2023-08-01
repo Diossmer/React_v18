@@ -52,7 +52,7 @@ export default function Mantener() {
           <span className="celeste">double</span>
           <span className="blue">&#40;</span>
           <span className="celeste">number</span>
-          <span className="ide">&#41;</span>{" "}
+          <span className="blue">&#41;</span>{" "}
           <span className="yellow">&#123;</span>
           {"\n  "}
           <span className="pink">return</span>{" "}
