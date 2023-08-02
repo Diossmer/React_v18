@@ -175,7 +175,8 @@ export default function Inicio() {
           {"\n"}
           <span className={Estilos.greendark}>&#47;&#47;</span>
           <span className={Estilos.greendark}>
-            Hook no funciona aqui, solo Lógica Javascript
+            Hook no funciona aqui, solo Lógica Javascript, no se
+            renderiza
           </span>
         </p>
         <code>
@@ -189,7 +190,7 @@ export default function Inicio() {
           {"\n  "}
           <span className={Estilos.greendark}>&#47;&#47;</span>
           <span className={Estilos.greendark}>
-            toda la lógica de React
+            toda la lógica de React, renderiza por refrescar la página
           </span>
           {"\n  "}
           <span className={Estilos.blue}>let</span>
